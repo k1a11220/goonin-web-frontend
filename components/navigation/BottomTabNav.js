@@ -5,11 +5,10 @@ import { useRouter } from "next/dist/client/router";
 
 const Container = styled.div`
   width: 100%;
-  height: 50px;
-  position: fixed;
+  height: 64px;
+  position: sticky;
   bottom: 0;
-  border-top: 1px solid #1d1d1d;
-  z-index: 3;
+  border-top: 2px solid #f2f3f5;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -21,13 +20,13 @@ const NavItem = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Icon = styled.div`
   /* width: 30px; */
   margin: 10px;
   height: 30px;
-  cursor: pointer;
 `;
 
 const BottomTabNav = (props) => {

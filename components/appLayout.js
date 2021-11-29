@@ -1,13 +1,14 @@
 import React from "react";
-import BottomTabNav from "./BottomTabNav";
+import GlobalStyle from "../styles/globalStyle";
+import BottomTabNav from "./navigation/BottomTabNav";
 
 const AppLayout = ({ children }) => {
   return (
-    <div>
-      <h1>ss</h1>
+    <>
+      <GlobalStyle />
       {children}
       <BottomTabNav />
-    </div>
+    </>
   );
 };
 

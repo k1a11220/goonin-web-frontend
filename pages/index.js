@@ -1,5 +1,11 @@
+import styled from "styled-components";
+
+const Container = styled.div`
+  height: 120vh;
+`;
+
 const Home = () => {
-  return <div>This is Home</div>;
+  return <Container>This is Home</Container>;
 };
 
 export default Home;

@@ -1,4 +1,4 @@
-import AppLayout from "../components/navigation/AppLayout";
+import AppLayout from "../components/appLayout";
 import "../styles/reset.css";
 
 function MyApp({ Component, pageProps }) {
