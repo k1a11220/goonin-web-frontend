@@ -1,6 +1,6 @@
-import { useRouter } from "next/dist/client/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const Container = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const NavItem = styled.div`
+const NavItem = styled(Link)`
   width: 25%;
   height: 100%;
   display: flex;
@@ -23,43 +23,24 @@ const NavItem = styled.div`
 `;
 
 const Icon = styled.div`
-  width: 30px;
+  /* width: 30px; */
+  margin: 10px;
   height: 30px;
   cursor: pointer;
 `;
 
 const BottomTabNav = (props) => {
-  const router = useRouter();
   const [activeTabs, setActiveTabs] = useState(props.name);
-  useEffect(() => {
-    switch (activeTabs) {
-      case "home":
-        router.push("/");
-        break;
-      case "search":
-        router.push("/search");
-        break;
-      case "saved":
-        router.push("/saved");
-        break;
-      case "account":
-        router.push("/account");
-        break;
-      default:
-        router.push("/");
-        break;
-    }
-  }, [activeTabs, router]);
   return (
     <Container>
-      <NavItem>
+      <NavItem href="/">
         {activeTabs === "home" ? (
           <Icon onClick={() => setActiveTabs("home")}>activeHome</Icon>
         ) : (
           <Icon onClick={() => setActiveTabs("home")}>Home</Icon>
         )}
       </NavItem>
-      <NavItem>
+      <NavItem href="/search">
         {activeTabs === "search" ? (
           <Icon onClick={() => setActiveTabs("home")}>activeSearch</Icon>
         ) : (
