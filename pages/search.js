@@ -1,12 +1,7 @@
 import BottomTabNav from "../components/navigation/BottomTabNav";
 
 const Search = () => {
-  return (
-    <div>
-      Search
-      <BottomTabNav name="search" />
-    </div>
-  );
+  return <div>Search</div>;
 };
 
 export default Search;

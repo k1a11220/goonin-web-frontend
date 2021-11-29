@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 
 const Container = styled.div`
   width: 100%;
@@ -30,21 +31,27 @@ const Icon = styled.div`
 `;
 
 const BottomTabNav = (props) => {
-  const [activeTabs, setActiveTabs] = useState(props.name);
+  const router = useRouter();
+  const [activeTabs, setActiveTabs] = useState(router.asPath);
+
+  useEffect(() => {
+    setActiveTabs(router.asPath);
+  }, [activeTabs, router]);
+
   return (
     <Container>
       <NavItem href="/">
-        {activeTabs === "home" ? (
-          <Icon onClick={() => setActiveTabs("home")}>activeHome</Icon>
+        {activeTabs === "/" ? (
+          <Icon onClick={() => setActiveTabs("/home")}>activeHome</Icon>
         ) : (
-          <Icon onClick={() => setActiveTabs("home")}>Home</Icon>
+          <Icon onClick={() => setActiveTabs("/home")}>Home</Icon>
         )}
       </NavItem>
       <NavItem href="/search">
-        {activeTabs === "search" ? (
-          <Icon onClick={() => setActiveTabs("home")}>activeSearch</Icon>
+        {activeTabs === "/search" ? (
+          <Icon onClick={() => setActiveTabs("/search")}>activeSearch</Icon>
         ) : (
-          <Icon onClick={() => setActiveTabs("home")}>Search</Icon>
+          <Icon onClick={() => setActiveTabs("/search")}>Search</Icon>
         )}
       </NavItem>
     </Container>
