@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     :root{
         font-size: 100%;
+        --font-medium: 400;
         --width: 800px;
 
         @media (max-width: 800px) {
@@ -11,7 +12,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body.light{
-        --color: #ffffff
+        --color: #cccfd4;
+        --text-color: #717989;
+        --main-color: #2A364E;
+        --highlight-color: #4191FD;
+        --bg-color: #ffffff;
+        --card-color: #F8F8F8;
     }
 
     body.dark{
