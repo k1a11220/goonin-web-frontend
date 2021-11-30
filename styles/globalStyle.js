@@ -11,15 +11,11 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body.light{
-
+        --color: #ffffff
     }
 
     body.dark{
-
-    }
-
-    body {
-        background-color: #fff;
+        --color: #1d1d1d
     }
 
     html, body, #__next {
