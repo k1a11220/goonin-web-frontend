@@ -1,27 +1,7 @@
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import styled from "styled-components";
-
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  padding-left: 24px;
-  padding-right: 24px;
-
-  background-color: var(--bgColor);
-`;
-
-const Header = styled.div`
-  height: 170px;
-`;
-
-const Title = styled.h1`
-  padding-top: 94px;
-  font-size: 26px;
-  color: var(--main-color);
-  font-weight: 600;
-  align-self: center;
-`;
+import { Container, Header, Title } from "../styles/styles";
 
 const HeadSilder = styled.div`
   width: 100vw;
@@ -54,14 +34,6 @@ const ContentContainer = styled.div`
   background-color: #f8f8f8;
   border-radius: 20px;
   margin-bottom: 16px;
-`;
-
-const GET_BENEFIT = gql`
-  {
-    benefits {
-      id
-    }
-  }
 `;
 
 const Home = () => {
