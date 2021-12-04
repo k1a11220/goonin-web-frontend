@@ -39,13 +39,13 @@ const Thumbnail = styled.div`
   border-radius: 10px;
 `;
 
-const SmCard = () => {
+const SmCard = ({ title, subtitles }) => {
   return (
     <Container href="/benefits">
       <Wrapper>
         <div>
-          <Title>CGV</Title>
-          <Subtitles>2D영화 4,000원 할인</Subtitles>
+          <Title>{title}</Title>
+          <Subtitles>{subtitles}</Subtitles>
         </div>
         <Thumbnail />
       </Wrapper>
