@@ -31,7 +31,7 @@ const Icon = styled.div`
   align-items: center;
   flex-direction: column;
   cursor: pointer;
-  margin: 10px;
+  margin: 22px;
   width: 84px;
 
   & p {
@@ -46,7 +46,7 @@ const Icon = styled.div`
   }
 `;
 
-const BottomTabNav = (props) => {
+const BottomTabNav = () => {
   const router = useRouter();
   const [activeTabs, setActiveTabs] = useState(router.asPath);
 

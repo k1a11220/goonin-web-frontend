@@ -10,15 +10,15 @@ const ThemeToggle = () => {
     window.localStorage.setItem("theme", activeTheme);
   }, [activeTheme]);
   return (
-    <button
-      aria-label={`Change to ${inactiveTheme} mode`}
-      title={`Change to ${inactiveTheme} mode`}
-      type="button"
-      onClick={() => setActiveTheme(inactiveTheme)}
-    >
-      <span activeTheme={activeTheme} />
-      <span>Toggle</span>
-    </button>
+    <span activeTheme={activeTheme} />
+    // <button
+    //   aria-label={`Change to ${inactiveTheme} mode`}
+    //   title={`Change to ${inactiveTheme} mode`}
+    //   type="button"
+    //   onClick={() => setActiveTheme(inactiveTheme)}
+    // >
+    //   <span>Toggle</span>
+    // </button>
   );
 };
 
