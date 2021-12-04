@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
+import SmCard from "../components/card/smCard";
 import { Container, Header, Title } from "../styles/styles";
 
 const GET_FILTERED_BENEFITS = gql`
@@ -28,6 +29,14 @@ const Benefit = () => {
       <Header>
         <Title>혜택</Title>
       </Header>
+      <SmCard />
+      <SmCard />
+      <SmCard />
+      <SmCard />
+      <SmCard />
+      <SmCard />
+      <SmCard />
+      <SmCard />
     </Container>
   );
 };
