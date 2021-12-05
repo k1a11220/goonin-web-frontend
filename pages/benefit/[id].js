@@ -51,6 +51,7 @@ const DetailContainer = styled.div`
 
   &:last-of-type {
     border-bottom: none;
+    margin-bottom: calc(60px + 80px);
   }
 `;
 
@@ -109,7 +110,7 @@ const CarouserContainerInner = styled.div`
   }
 `;
 
-const Images = styled.div`
+const Images = styled.img`
   width: calc(100vw - 24px * 2);
   height: 232px;
   background-color: var(--card-color);
@@ -131,18 +132,20 @@ const DetailPage = () => {
   const { loading, data } = useQuery(GET_BENEFITS, {
     variables: { id: +id },
   });
+
+  console.log(data?.getById?.summary);
   return (
     <Container>
       <BackBtn />
       <Header button={true}>
         <Title button={true}>
-          롯데시네마에서 최대 <br /> <Highlight>4,000원</Highlight> 할인해드려요
+          {data?.getById?.summary[0]} <br />
+          <Highlight>{data?.getById?.summary[1]} </Highlight>
+          {data?.getById?.summary[2]}
         </Title>
       </Header>
       <Address>{data?.getById?.address}</Address>
       <CarouserContainerInner>
-        <Images />
-        <Images />
         <Images />
       </CarouserContainerInner>
       <DetailContainer>
