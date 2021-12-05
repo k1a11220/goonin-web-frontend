@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
   padding-left: 24px;
   padding-right: 24px;
   background-color: var(--bgColor);
-  min-height: calc(100vh - 74px);
+  min-height: calc(100vh);
 `;
 
 export const Header = styled.div`

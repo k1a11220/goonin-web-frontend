@@ -40,13 +40,7 @@ const Address = styled.div`
   background-color: var(--sub-color);
   margin-top: 16px;
   margin-bottom: 40px;
-`;
-
-const Images = styled.div`
-  height: 232px;
-  background-color: var(--card-color);
-  border-radius: 20px;
-  margin-bottom: 40px;
+  width: fit-content;
 `;
 
 const DetailContainer = styled.div`
@@ -67,6 +61,7 @@ const DetailWrapper = styled.div`
 const Detail = styled.p`
   color: var(--text-color);
   margin-bottom: 8px;
+  line-height: 1.25;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -74,13 +69,15 @@ const Detail = styled.p`
 `;
 
 const Label = styled.p`
+  min-width: 28px;
   font-size: 16px;
   color: var(--main-color);
   font-weight: 600;
+  line-height: 1.25;
 `;
 
 const CTA = styled.button`
-  width: 100%;
+  width: calc(100vw - 24px * 2);
   height: 60px;
   border-radius: 18px;
   background-color: var(--main-color);
@@ -88,8 +85,44 @@ const CTA = styled.button`
   color: var(--bg-color);
   font-size: 15px;
   margin-top: 20px;
-  position: sticky;
+  position: fixed;
   bottom: 24px;
+`;
+
+const CarouserContainerInner = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  height: 232px;
+  width: 100vw;
+  align-self: center;
+  margin-bottom: 40px;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &:-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const Images = styled.div`
+  width: calc(100vw - 24px * 2);
+  height: 232px;
+  background-color: var(--card-color);
+  border-radius: 20px;
+  scroll-snap-align: center;
+
+  &:first-child {
+    margin-left: 24px;
+  }
+
+  &:last-of-type {
+    margin-right: 24px;
+  }
 `;
 
 const DetailPage = () => {
@@ -98,7 +131,6 @@ const DetailPage = () => {
   const { loading, data } = useQuery(GET_BENEFITS, {
     variables: { id: +id },
   });
-
   return (
     <Container>
       <BackBtn />
@@ -108,19 +140,25 @@ const DetailPage = () => {
         </Title>
       </Header>
       <Address>{data?.getById?.address}</Address>
-      <Images />
+      <CarouserContainerInner>
+        <Images />
+        <Images />
+        <Images />
+      </CarouserContainerInner>
       <DetailContainer>
         <Label>혜택</Label>
         <DetailWrapper>
-          <Detail>2D 영화 주중 7천원, 주말 8천원(동반3인)</Detail>
-          <Detail>3D 영화 주중 8천원 주말 9천원(동반3인)</Detail>
-          <Detail>콤보세트 2천원 할인(더블콤보 4천원 할인)</Detail>
+          {data?.getById?.benefits.map((benefit) => (
+            <Detail>{benefit}</Detail>
+          ))}
         </DetailWrapper>
       </DetailContainer>
       <DetailContainer>
         <Label>조건</Label>
         <DetailWrapper>
-          <Detail>휴가증 지참 필수</Detail>
+          {data?.getById?.conditions.map((condition) => (
+            <Detail>{condition}</Detail>
+          ))}
         </DetailWrapper>
       </DetailContainer>
       <DetailContainer>
