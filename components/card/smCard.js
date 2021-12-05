@@ -30,6 +30,11 @@ const Subtitles = styled.p`
   font-size: 16px;
   color: var(--highlight-color);
   font-weight: 500;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 18px;
 `;
 
 const Thumbnail = styled.div`
@@ -39,17 +44,19 @@ const Thumbnail = styled.div`
   border-radius: 10px;
 `;
 
-const SmCard = ({ title, subtitles }) => {
+const SmCard = ({ title, subtitles, id }) => {
   return (
-    <Container href="/benefits">
-      <Wrapper>
-        <div>
-          <Title>{title}</Title>
-          <Subtitles>{subtitles}</Subtitles>
-        </div>
-        <Thumbnail />
-      </Wrapper>
-    </Container>
+    <Link href={`benefit/${id}`}>
+      <Container>
+        <Wrapper>
+          <div>
+            <Title>{title}</Title>
+            <Subtitles>{subtitles}</Subtitles>
+          </div>
+          <Thumbnail />
+        </Wrapper>
+      </Container>
+    </Link>
   );
 };
 

@@ -18,6 +18,7 @@ const GET_BENEFIT = gql`
     benefits {
       id
       name
+      mainBenefit
     }
   }
 `;

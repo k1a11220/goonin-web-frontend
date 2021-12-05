@@ -7,7 +7,12 @@ const SmCardList = ({ Data }) => {
   return (
     <Container>
       {Data.map((card) => (
-        <SmCard key={card.id} title={card.name} subtitles={card.mainBenefit} />
+        <SmCard
+          key={card.id}
+          id={card.id}
+          title={card.name}
+          subtitles={card.mainBenefit}
+        />
       ))}
       <SmCard />
     </Container>
