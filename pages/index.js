@@ -5,7 +5,7 @@ import { Container, Header, Title } from "../styles/styles";
 
 const HeadSilder = styled.div`
   width: 100vw;
-  align-self: center;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -44,12 +44,12 @@ const Home = () => {
       <Header>
         <Title>군복무 가이드</Title>
       </Header>
-      <HeadSilder>
+      {/* <HeadSilder>
         <HeadCard />
         <HeadCard />
         <HeadCard />
         <HeadCard />
-      </HeadSilder>
+      </HeadSilder> */}
       <ContentContainer />
       <ContentContainer />
     </Container>
