@@ -29,8 +29,8 @@ const Benefit = () => {
   return (
     <>
       <Container>
-        <Header>
-          <Title>혜택</Title>
+        <Header button={false}>
+          <Title button={false}>혜택</Title>
         </Header>
         {loading ? "로딩중" : <SmCardList Data={data.benefits} />}
       </Container>

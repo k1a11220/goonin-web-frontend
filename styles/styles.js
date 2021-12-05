@@ -8,11 +8,11 @@ export const Container = styled.section`
 `;
 
 export const Header = styled.div`
-  height: 170px;
+  min-height: ${(props) => (props.button === true ? "0" : "170px")};
 `;
 
 export const Title = styled.h1`
-  padding-top: 94px;
+  padding-top: ${(props) => (props.button === true ? "36px" : "94px")};
   font-size: 26px;
   color: var(--main-color);
   font-weight: 600;

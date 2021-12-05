@@ -4,6 +4,7 @@ import gql from "graphql-tag";
 import { useQuery } from "@apollo/client";
 import { Container, Header, Title } from "../../styles/styles";
 import styled from "styled-components";
+import BackBtn from "../../components/backBtn";
 
 const GET_BENEFITS = gql`
   query getById($id: Int!) {
@@ -87,6 +88,8 @@ const CTA = styled.button`
   color: var(--bg-color);
   font-size: 15px;
   margin-top: 20px;
+  position: sticky;
+  bottom: 24px;
 `;
 
 const DetailPage = () => {
@@ -98,8 +101,9 @@ const DetailPage = () => {
 
   return (
     <Container>
-      <Header>
-        <Title>
+      <BackBtn />
+      <Header button={true}>
+        <Title button={true}>
           롯데시네마에서 최대 <br /> <Highlight>4,000원</Highlight> 할인해드려요
         </Title>
       </Header>

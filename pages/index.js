@@ -43,8 +43,8 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Header>
-          <Title>군복무 가이드</Title>
+        <Header button={false}>
+          <Title paddingTop="94px">군복무 가이드</Title>
         </Header>
         {/* <HeadSilder>
         <HeadCard />
