@@ -21,7 +21,6 @@ const AppLayout = ({ children }) => {
           <GlobalStyle />
           <ThemeToggle />
           {children}
-          <BottomTabNav />
         </ThemeContext.Provider>
       </ThemeProvider>
     </ApolloProvider>

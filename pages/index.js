@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import styled from "styled-components";
+import BottomTabNav from "../components/navigation/BottomTabNav";
 import { Container, Header, Title } from "../styles/styles";
 
 const HeadSilder = styled.div`
@@ -40,19 +41,22 @@ const Home = () => {
   // const { loading, error, data } = useQuery(GET_BENEFIT);
   // console.log(data);
   return (
-    <Container>
-      <Header>
-        <Title>군복무 가이드</Title>
-      </Header>
-      {/* <HeadSilder>
+    <>
+      <Container>
+        <Header>
+          <Title>군복무 가이드</Title>
+        </Header>
+        {/* <HeadSilder>
         <HeadCard />
         <HeadCard />
         <HeadCard />
         <HeadCard />
       </HeadSilder> */}
-      <ContentContainer />
-      <ContentContainer />
-    </Container>
+        <ContentContainer />
+        <ContentContainer />
+      </Container>
+      <BottomTabNav />
+    </>
   );
 };
 

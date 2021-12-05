@@ -78,6 +78,17 @@ const Label = styled.p`
   font-weight: 600;
 `;
 
+const CTA = styled.button`
+  width: 100%;
+  height: 60px;
+  border-radius: 18px;
+  background-color: var(--main-color);
+  border: none;
+  color: var(--bg-color);
+  font-size: 15px;
+  margin-top: 20px;
+`;
+
 const DetailPage = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -114,6 +125,7 @@ const DetailPage = () => {
           <Detail>임직원 할인과 중복 불가</Detail>
         </DetailWrapper>
       </DetailContainer>
+      <CTA>더 알아보기</CTA>
     </Container>
   );
 };
