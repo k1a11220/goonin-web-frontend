@@ -9,7 +9,7 @@ const BenefitLayout = ({ children, header }) => {
         <Title button={false}>{header}</Title>
       </Header>
       <TabIndicator />
-      <div>{children}</div>
+      <>{children}</>
     </>
   );
 };

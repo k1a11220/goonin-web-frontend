@@ -7,7 +7,8 @@ import BenefitIcon from "./icon/benefitIcon";
 import MoreIcon from "./icon/moreIcon";
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
+  align-self: center;
   height: 72px;
   position: sticky;
   bottom: 0;
