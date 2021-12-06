@@ -6,14 +6,15 @@ const Container = styled.div``;
 const SmCardList = ({ Data }) => {
   return (
     <Container>
-      {Data.map((card) => (
-        <SmCard
-          key={card.id}
-          id={card.id}
-          title={card.name}
-          subtitles={card.mainBenefit}
-        />
-      ))}
+      {Data &&
+        Data.map((card) => (
+          <SmCard
+            key={card.id}
+            id={card.id}
+            title={card.name}
+            subtitles={card.mainBenefit}
+          />
+        ))}
       <SmCard />
     </Container>
   );
