@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
     :root{
         font-size: 100%;
         --font-medium: 400;
-        --width: 800px;
+        --width: 600px;
 
         @media (max-width: 800px) {
             

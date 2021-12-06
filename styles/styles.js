@@ -7,6 +7,8 @@ export const Container = styled.section`
   padding-right: 24px;
   background-color: var(--bgColor);
   min-height: calc(100vh);
+  max-width: var(--width);
+  margin: 0 auto;
 `;
 
 export const Header = styled.div`

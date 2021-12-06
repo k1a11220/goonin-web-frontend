@@ -42,19 +42,17 @@ const Home = () => {
   // console.log(data);
   return (
     <>
-      <Container>
-        <Header button={false}>
-          <Title paddingTop="94px">군복무 가이드</Title>
-        </Header>
-        {/* <HeadSilder>
+      <Header button={false}>
+        <Title paddingTop="94px">군복무 가이드</Title>
+      </Header>
+      {/* <HeadSilder>
         <HeadCard />
         <HeadCard />
         <HeadCard />
         <HeadCard />
       </HeadSilder> */}
-        <ContentContainer />
-        <ContentContainer />
-      </Container>
+      <ContentContainer />
+      <ContentContainer />
       <BottomTabNav />
     </>
   );

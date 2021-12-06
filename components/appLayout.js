@@ -7,6 +7,7 @@ import BottomTabNav from "./navigation/BottomTabNav";
 import dynamic from "next/dynamic";
 import client from "../api/apollo";
 import { ApolloProvider } from "@apollo/client";
+import { Container } from "../styles/styles";
 
 const ThemeToggle = dynamic(() => import("./themeToggle"), {
   ssr: false,
@@ -20,7 +21,7 @@ const AppLayout = ({ children }) => {
         <ThemeContext.Provider value={theme}>
           <GlobalStyle />
           <ThemeToggle />
-          {children}
+          <Container>{children}</Container>
         </ThemeContext.Provider>
       </ThemeProvider>
     </ApolloProvider>

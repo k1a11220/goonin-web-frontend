@@ -88,6 +88,7 @@ const CTA = styled.button`
   margin-top: 20px;
   position: fixed;
   bottom: 24px;
+  max-width: var(--width);
 `;
 
 const CarouserContainerInner = styled.div`
@@ -101,6 +102,7 @@ const CarouserContainerInner = styled.div`
   width: 100vw;
   align-self: center;
   margin-bottom: 40px;
+  max-width: calc(var(--width) + 24px * 2);
 
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -112,6 +114,7 @@ const CarouserContainerInner = styled.div`
 
 const Images = styled.img`
   width: calc(100vw - 24px * 2);
+  max-width: calc(var(--width));
   height: 232px;
   background-color: var(--card-color);
   border-radius: 20px;
@@ -132,8 +135,6 @@ const DetailPage = () => {
   const { loading, data } = useQuery(GET_BENEFITS, {
     variables: { id: +id },
   });
-
-  console.log(data?.getById?.summary);
   return (
     <Container>
       <BackBtn />

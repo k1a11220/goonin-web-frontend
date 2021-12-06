@@ -28,12 +28,10 @@ const Benefit = () => {
   const { loading, data } = useQuery(GET_BENEFIT);
   return (
     <>
-      <Container>
-        <Header button={false}>
-          <Title button={false}>혜택</Title>
-        </Header>
-        {loading ? "로딩중" : <SmCardList Data={data.benefits} />}
-      </Container>
+      <Header button={false}>
+        <Title button={false}>혜택</Title>
+      </Header>
+      {loading ? "로딩중" : <SmCardList Data={data.benefits} />}
       <BottomTabNav />
     </>
   );
