@@ -136,7 +136,7 @@ const DetailPage = () => {
     variables: { id: +id },
   });
   return (
-    <Container>
+    <>
       <BackBtn />
       <Header button={true}>
         <Title button={true}>
@@ -152,16 +152,16 @@ const DetailPage = () => {
       <DetailContainer>
         <Label>혜택</Label>
         <DetailWrapper>
-          {data?.getById?.benefits.map((benefit) => (
-            <Detail>{benefit}</Detail>
+          {data?.getById?.benefits.map((benefit, index) => (
+            <Detail key={index}>{benefit}</Detail>
           ))}
         </DetailWrapper>
       </DetailContainer>
       <DetailContainer>
         <Label>조건</Label>
         <DetailWrapper>
-          {data?.getById?.conditions.map((condition) => (
-            <Detail>{condition}</Detail>
+          {data?.getById?.conditions.map((condition, index) => (
+            <Detail key={index}>{condition}</Detail>
           ))}
         </DetailWrapper>
       </DetailContainer>
@@ -172,7 +172,7 @@ const DetailPage = () => {
         </DetailWrapper>
       </DetailContainer>
       <CTA>더 알아보기</CTA>
-    </Container>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
+import BenefitLayout from "../components/benefitLayout";
 import SmCard from "../components/card/smCard";
 import SmCardList from "../components/card/smCardList";
 import BottomTabNav from "../components/navigation/BottomTabNav";
@@ -27,13 +28,10 @@ const GET_BENEFIT = gql`
 const Benefit = () => {
   const { loading, data } = useQuery(GET_BENEFIT);
   return (
-    <>
-      <Header button={false}>
-        <Title button={false}>혜택</Title>
-      </Header>
+    <BenefitLayout header="혜택">
       {loading ? "로딩중" : <SmCardList Data={data.benefits} />}
       <BottomTabNav />
-    </>
+    </BenefitLayout>
   );
 };
 
