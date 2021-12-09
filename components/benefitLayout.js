@@ -8,6 +8,7 @@ const BenefitLayout = ({ children, header }) => {
       <Header button={true} style={{ marginBottom: "20px" }}>
         <Title button={false}>{header}</Title>
       </Header>
+      <TabIndicator />
       {/* <TabIndicator /> */}
       <>{children}</>
     </>

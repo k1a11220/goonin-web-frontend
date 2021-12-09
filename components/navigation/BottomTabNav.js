@@ -76,8 +76,8 @@ const BottomTabNav = () => {
           </Icon>
         )}
       </NavItem>
-      <NavItem href="/[benefit]">
-        {activeTabs === "/benefit" ? (
+      <NavItem href="/benefit">
+        {activeTabs.includes("/benefit") ? (
           <Icon
             onClick={() => setActiveTabs("/benefit")}
             color="var(--main-color)"

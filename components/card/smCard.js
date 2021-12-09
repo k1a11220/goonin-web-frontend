@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 
 const Container = styled.div`
   width: 100%;
@@ -46,18 +46,21 @@ const Thumbnail = styled.div`
 `;
 
 const SmCard = ({ title, subtitles, id }) => {
+  const router = useRouter();
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push({ pathname: `/benefit/${id}` });
+  };
   return (
-    <Link href={`benefit/${id}`}>
-      <Container>
-        <Wrapper>
-          <div>
-            <Title>{title}</Title>
-            <Subtitles>{subtitles}</Subtitles>
-          </div>
-          <Thumbnail />
-        </Wrapper>
-      </Container>
-    </Link>
+    <Container onClick={handleClick}>
+      <Wrapper>
+        <div>
+          <Title>{title}</Title>
+          <Subtitles>{subtitles}</Subtitles>
+        </div>
+        <Thumbnail />
+      </Wrapper>
+    </Container>
   );
 };
 

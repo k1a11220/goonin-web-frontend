@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
 import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
+import gql from "graphql-tag";
+
+const GET_BENEFIT = gql`
+  {
+    benefits {
+      category
+    }
+  }
+`;
 
 const TabContainer = styled.div`
   position: sticky;
@@ -39,6 +49,10 @@ const Item = styled.div`
 `;
 
 const TabIndicator = () => {
+  const { loading, data } = useQuery(GET_BENEFIT);
+  const uniqueArr = loading
+    ? ""
+    : [...new Set(data.benefits.map((data) => data.category))];
   const router = useRouter();
   const [activeTabs, setActiveTabs] = useState(router.asPath);
 
@@ -58,15 +72,47 @@ const TabIndicator = () => {
             <Link href="/benefit">전체</Link>
           </Item>
         )}
-        {activeTabs === "/benefit/category/culture" ? (
-          <Item color="var(--main-color)" borderColor="var(--main-color)">
-            <Link href="/benefit/category/culture">문화</Link>
-          </Item>
-        ) : (
-          <Item color="var(--color)" borderColor="var(--bg-color)">
-            <Link href="/benefit/category/culture">문화</Link>
-          </Item>
-        )}
+        {loading
+          ? "로딩중"
+          : uniqueArr.map((data, index) =>
+              activeTabs === `/benefit/category/${data}` ? (
+                <Item
+                  key={index}
+                  color="var(--main-color)"
+                  borderColor="var(--main-color)"
+                >
+                  <Link href={`/benefit/${data}`}>
+                    {data === "culture"
+                      ? "문화"
+                      : data === "food"
+                      ? "식당"
+                      : data === "activity"
+                      ? "여행&액티비티"
+                      : data === "education"
+                      ? "교육"
+                      : ""}
+                  </Link>
+                </Item>
+              ) : (
+                <Item
+                  key={index}
+                  color="var(--color)"
+                  borderColor="var(--bg-color)"
+                >
+                  <Link href={`/benefit/category/${data}`}>
+                    {data === "culture"
+                      ? "문화"
+                      : data === "food"
+                      ? "식당"
+                      : data === "activity"
+                      ? "여행&액티비티"
+                      : data === "education"
+                      ? "교육"
+                      : ""}
+                  </Link>
+                </Item>
+              )
+            )}
       </TabWrapper>
     </TabContainer>
   );

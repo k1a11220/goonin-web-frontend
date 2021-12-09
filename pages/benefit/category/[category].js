@@ -22,9 +22,6 @@ const Culture = () => {
   const { loading, data } = useQuery(GET_FILTERED_BENEFITS, {
     variables: { category: category, location: location },
   });
-  {
-    loading ? "" : console.log(data.getByCategoryLocation);
-  }
   return (
     <BenefitLayout header="혜택">
       {loading ? "로딩중" : <SmCardList Data={data.getByCategoryLocation} />}
