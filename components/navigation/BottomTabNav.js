@@ -76,7 +76,7 @@ const BottomTabNav = () => {
           </Icon>
         )}
       </NavItem>
-      <NavItem href="/benefit">
+      <NavItem href="/[benefit]">
         {activeTabs === "/benefit" ? (
           <Icon
             onClick={() => setActiveTabs("/benefit")}

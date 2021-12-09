@@ -4,6 +4,7 @@ import BenefitLayout from "../components/benefitLayout";
 import SmCard from "../components/card/smCard";
 import SmCardList from "../components/card/smCardList";
 import BottomTabNav from "../components/navigation/BottomTabNav";
+import TabIndicator from "../components/tabIndicator";
 import { Container, Header, Title } from "../styles/styles";
 
 const GET_FILTERED_BENEFITS = gql`
@@ -29,6 +30,7 @@ const Benefit = () => {
   const { loading, data } = useQuery(GET_BENEFIT);
   return (
     <BenefitLayout header="혜택">
+      <TabIndicator />
       {loading ? "로딩중" : <SmCardList Data={data.benefits} />}
       <BottomTabNav />
     </BenefitLayout>
