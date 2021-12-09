@@ -12,13 +12,15 @@ const TabContainer = styled.div`
   border-bottom: 1px solid #f2f3f5;
   background-color: var(--bg-color);
   overflow-x: scroll;
+  max-width: var(--width);
 `;
 
 const TabWrapper = styled.div`
   display: flex;
+  width: calc(100vw - 24px * 2);
   padding-top: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
+  margin: 0 auto;
+  max-width: var(--width);
 `;
 
 const Item = styled.div`

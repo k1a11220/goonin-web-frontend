@@ -9,6 +9,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.div`

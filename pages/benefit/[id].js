@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/client";
-import { Container, Header, Title } from "../../styles/styles";
+import { Header, Title } from "../../styles/styles";
 import styled from "styled-components";
 import BackBtn from "../../components/backBtn";
 
