@@ -15,6 +15,12 @@ const SmCardList = ({ Data }) => {
             subtitles={card.mainBenefit}
           />
         ))}
+      <SmCard />
+      <SmCard />
+      <SmCard />
+      <SmCard />
+      <SmCard />
+      <SmCard />
     </Container>
   );
 };

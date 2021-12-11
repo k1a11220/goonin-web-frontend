@@ -1,14 +1,16 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import useDocumentScrollThrottled from "../hooks/useDocumentScrollThrottled";
 
 const TabContainer = styled.div`
-  position: sticky;
+  position: ${(props) => props.scroll};
   top: calc(58px);
   width: 100vw;
   align-self: center;
   padding-top: 14px;
   padding-bottom: 14px;
   margin-bottom: 12px;
-  /* border-bottom: 1px solid #f2f3f5; */
+  border-bottom: ${(props) => props.border};
   background-color: var(--bg-color);
   overflow-x: scroll;
   max-width: var(--width);
@@ -22,27 +24,81 @@ const TabWrapper = styled.div`
 `;
 
 const Item = styled.div`
-  color: var(--text-color);
+  color: ${(props) => props.color};
   font-size: 14px;
   padding: 10px 15px 8px 15px;
   border-radius: 20px;
-  &:first-of-type {
-    color: var(--bg-color);
-    background-color: var(--main-color);
-  }
+  background-color: ${(props) => props.bgColor};
+  cursor: pointer;
 `;
 
-const FilterIndicator = ({ setLocation }) => {
-  const handleClick = (e, data) => {
-    e.preventDefault();
-    setLocation(data);
-  };
+const FilterIndicator = ({ location, setLocation }) => {
+  const [shouldHideHeader, setShouldHideHeader] = useState(false);
+  const [shouldShowShadow, setShouldShowShadow] = useState(false);
+
+  const MINIMUM_SCROLL = 80;
+  const TIMEOUT_DELAY = 400;
+
+  useDocumentScrollThrottled((callbackData) => {
+    const { previousScrollTop, currentScrollTop } = callbackData;
+    const isScrolledDown = previousScrollTop < currentScrollTop;
+    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
+
+    setShouldShowShadow(currentScrollTop > 2);
+
+    setTimeout(() => {
+      setShouldHideHeader(isScrolledDown && isMinimumScrolled);
+    }, TIMEOUT_DELAY);
+  });
+
+  const borderStyle = shouldShowShadow ? "1px solid #f2f3f5" : "none";
+  const hiddenStyle = shouldHideHeader ? "static" : "sticky";
+
   return (
-    <TabContainer>
+    <TabContainer border={borderStyle} scroll={hiddenStyle}>
       <TabWrapper>
-        <Item onClick={() => setLocation("전국")}>전국</Item>
-        <Item onClick={() => setLocation("서울")}>서울</Item>
-        <Item>경기남부</Item>
+        {location === "전국" ? (
+          <Item
+            color="var(--bg-color)"
+            bgColor="var(--main-color)"
+            onClick={() => setLocation("전국")}
+          >
+            전국
+          </Item>
+        ) : (
+          <Item color="var(--text-color)" onClick={() => setLocation("전국")}>
+            전국
+          </Item>
+        )}
+        {location === "서울" ? (
+          <Item
+            color="var(--bg-color)"
+            bgColor="var(--main-color)"
+            onClick={() => setLocation("서울")}
+          >
+            서울
+          </Item>
+        ) : (
+          <Item color="var(--text-color)" onClick={() => setLocation("서울")}>
+            서울
+          </Item>
+        )}
+        {location === "경기남부" ? (
+          <Item
+            color="var(--bg-color)"
+            bgColor="var(--main-color)"
+            onClick={() => setLocation("경기남부")}
+          >
+            경기남부
+          </Item>
+        ) : (
+          <Item
+            color="var(--text-color)"
+            onClick={() => setLocation("경기남부")}
+          >
+            경기남부
+          </Item>
+        )}
       </TabWrapper>
     </TabContainer>
   );

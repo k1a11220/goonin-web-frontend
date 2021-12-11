@@ -23,6 +23,7 @@ const TabContainer = styled.div`
   background-color: var(--bg-color);
   overflow-x: scroll;
   max-width: var(--width);
+  z-index: 1;
 `;
 
 const TabWrapper = styled.div`
