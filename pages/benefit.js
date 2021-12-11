@@ -21,7 +21,7 @@ const Benefit = () => {
   const { loading, data } = useQuery(GET_BENEFIT);
   return (
     <BenefitLayout header="혜택">
-      <FilterIndicator setLocation={setLocation} />
+      <FilterIndicator location={location} setLocation={setLocation} />
       {loading ? "로딩중" : <SmCardList Data={data.benefits} />}
       <BottomTabNav />
     </BenefitLayout>
