@@ -98,7 +98,7 @@ const CarouserContainerInner = styled.div`
   gap: 12px;
   overflow: auto;
   scroll-snap-type: x mandatory;
-  height: 232px;
+  aspect-ratio: 16 / 9;
   width: 100vw;
   align-self: center;
   margin-bottom: 40px;
@@ -115,11 +115,10 @@ const CarouserContainerInner = styled.div`
 const Images = styled.img`
   width: calc(100vw - 24px * 2);
   max-width: calc(var(--width));
-  height: 232px;
   background-color: var(--card-color);
   border-radius: 20px;
   scroll-snap-align: center;
-
+  aspect-ratio: 16 / 9;
   &:first-child {
     margin-left: 24px;
   }
@@ -147,7 +146,9 @@ const DetailPage = () => {
       </Header>
       <Address>{data?.getById?.address}</Address>
       <CarouserContainerInner>
-        <Images />
+        {data?.getById?.dtlImgs.map((imgs, index) => (
+          <Images key={index} src={imgs} />
+        ))}
       </CarouserContainerInner>
       <DetailContainer>
         <Label>혜택</Label>
