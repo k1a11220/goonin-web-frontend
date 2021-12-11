@@ -15,7 +15,6 @@ const SmCardList = ({ Data }) => {
             subtitles={card.mainBenefit}
           />
         ))}
-      <SmCard />
     </Container>
   );
 };

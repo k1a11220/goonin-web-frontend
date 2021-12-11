@@ -18,7 +18,7 @@ const TabContainer = styled.div`
   top: 0;
   width: 100vw;
   align-self: center;
-  margin-bottom: 26px;
+  /* margin-bottom: 26px; */
   border-bottom: 1px solid #f2f3f5;
   background-color: var(--bg-color);
   overflow-x: scroll;
@@ -81,7 +81,7 @@ const TabIndicator = () => {
                   color="var(--main-color)"
                   borderColor="var(--main-color)"
                 >
-                  <Link href={`/benefit/${data}`}>
+                  <Link href={`/benefit/category/${data}`}>
                     {data === "culture"
                       ? "문화"
                       : data === "food"
