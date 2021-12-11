@@ -13,6 +13,7 @@ const GET_FILTERED_BENEFITS = gql`
       id
       name
       mainBenefit
+      thumbnail
     }
   }
 `;

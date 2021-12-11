@@ -119,6 +119,8 @@ const Images = styled.img`
   border-radius: 20px;
   scroll-snap-align: center;
   aspect-ratio: 16 / 9;
+  object-fit: cover;
+
   &:first-child {
     margin-left: 24px;
   }

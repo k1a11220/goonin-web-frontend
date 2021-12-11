@@ -38,14 +38,15 @@ const Subtitles = styled.p`
   line-height: 18px;
 `;
 
-const Thumbnail = styled.div`
+const Thumbnail = styled.img`
   width: 100px;
   height: 60px;
   background-color: var(--bg-color);
   border-radius: 10px;
+  object-fit: cover;
 `;
 
-const SmCard = ({ title, subtitles, id }) => {
+const SmCard = ({ title, subtitles, id, thumbnail }) => {
   const router = useRouter();
   const handleClick = (e) => {
     e.preventDefault();
@@ -58,7 +59,7 @@ const SmCard = ({ title, subtitles, id }) => {
           <Title>{title}</Title>
           <Subtitles>{subtitles}</Subtitles>
         </div>
-        <Thumbnail />
+        <Thumbnail src={thumbnail} />
       </Wrapper>
     </Container>
   );

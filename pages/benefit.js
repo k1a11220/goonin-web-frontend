@@ -12,6 +12,7 @@ const GET_BENEFIT = gql`
       id
       name
       mainBenefit
+      thumbnail
     }
   }
 `;

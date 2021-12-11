@@ -4,6 +4,7 @@ import SmCard from "./smCard";
 const Container = styled.div``;
 
 const SmCardList = ({ Data }) => {
+  console.log(Data);
   return (
     <Container>
       {Data &&
@@ -13,6 +14,7 @@ const SmCardList = ({ Data }) => {
             id={card.id}
             title={card.name}
             subtitles={card.mainBenefit}
+            thumbnail={card.thumbnail}
           />
         ))}
     </Container>
