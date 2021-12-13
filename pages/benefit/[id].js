@@ -90,6 +90,9 @@ const CTA = styled.button`
   position: fixed;
   bottom: 24px;
   max-width: var(--width);
+
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 `;
 
 const CarouserContainerInner = styled.div`
