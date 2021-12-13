@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import SmCardList from "../../../components/card/smCardList";
 import FilterIndicator from "../../../components/common/filterIndicator";
+import SmCardLoading from "../../../components/common/smCardLoading";
 import BottomTabNav from "../../../components/navigation/BottomTabNav";
 import BenefitLayout from "../../../layout/benefitLayout";
 
@@ -29,7 +30,11 @@ const CategoryPage = () => {
   return (
     <BenefitLayout header="혜택">
       <FilterIndicator location={location} setLocation={setLocation} />
-      {loading ? "로딩중" : <SmCardList Data={data.getByCategoryLocation} />}
+      {loading ? (
+        <SmCardLoading />
+      ) : (
+        <SmCardList Data={data.getByCategoryLocation} />
+      )}
       <BottomTabNav />
     </BenefitLayout>
   );
