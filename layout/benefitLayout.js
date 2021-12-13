@@ -1,7 +1,6 @@
 import React from "react";
 import { Header, Title } from "../styles/styles";
-import FilterIndicator from "./filterIndicator";
-import TabIndicator from "./tabIndicator";
+import TabIndicator from "../components/common/tabIndicator";
 
 const BenefitLayout = ({ children, header, location }) => {
   return (
@@ -10,7 +9,6 @@ const BenefitLayout = ({ children, header, location }) => {
         <Title button={false}>{header}</Title>
       </Header>
       <TabIndicator />
-      {/* <TabIndicator /> */}
       <>{children}</>
     </>
   );

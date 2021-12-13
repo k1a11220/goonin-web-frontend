@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import { useQuery } from "@apollo/client";
 import { Header, Title } from "../../styles/styles";
 import styled from "styled-components";
-import BackBtn from "../../components/backBtn";
+import BackBtn from "../../components/common/backBtn";
 
 const GET_BENEFITS = gql`
   query getById($id: Int!) {

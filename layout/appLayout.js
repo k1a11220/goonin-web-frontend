@@ -3,13 +3,12 @@ import { ThemeProvider } from "styled-components";
 import ThemeContext from "../store/themeContext";
 import GlobalStyle from "../styles/globalStyle";
 import styledTheme from "../styles/theme";
-import BottomTabNav from "./navigation/BottomTabNav";
 import dynamic from "next/dynamic";
 import client from "../api/apollo";
 import { ApolloProvider } from "@apollo/client";
 import { Container } from "../styles/styles";
 
-const ThemeToggle = dynamic(() => import("./themeToggle"), {
+const ThemeToggle = dynamic(() => import("../components/themeToggle"), {
   ssr: false,
 });
 

@@ -1,5 +1,5 @@
-import AppLayout from "../components/appLayout";
 import "../styles/reset.css";
+import AppLayout from "../layout/appLayout";
 
 function MyApp({ Component, pageProps }) {
   return (

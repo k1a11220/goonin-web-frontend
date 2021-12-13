@@ -1,11 +1,11 @@
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
-import BenefitLayout from "../../../components/benefitLayout";
+import { useState } from "react";
 import SmCardList from "../../../components/card/smCardList";
-import FilterIndicator from "../../../components/filterIndicator";
+import FilterIndicator from "../../../components/common/filterIndicator";
 import BottomTabNav from "../../../components/navigation/BottomTabNav";
+import BenefitLayout from "../../../layout/benefitLayout";
 
 const GET_FILTERED_BENEFITS = gql`
   query getByCategoryLocation($category: String!, $location: String!) {

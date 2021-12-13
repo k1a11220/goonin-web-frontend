@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import useDocumentScrollThrottled from "../hooks/useDocumentScrollThrottled";
+import useDocumentScrollThrottled from "../../hooks/useDocumentScrollThrottled";
 
 const TabContainer = styled.div`
   position: ${(props) => props.scroll};
