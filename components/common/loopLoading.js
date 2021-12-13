@@ -15,20 +15,20 @@ const Container = styled.div`
 
   & h2 {
     color: var(--text-color);
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 `;
 
 const LoopLoading = () => {
   return (
     <Container>
-      <div className="lds-ellipsis">
+      <div className="lds-ring">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
       </div>
-      <h2>혜택 정보를 가져오고 있어요!</h2>
+      <h2>혜택 정보를 가져오고 있어요</h2>
     </Container>
   );
 };
