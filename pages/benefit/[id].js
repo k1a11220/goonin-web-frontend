@@ -5,6 +5,7 @@ import { useQuery } from "@apollo/client";
 import { Header, Title } from "../../styles/styles";
 import styled from "styled-components";
 import BackBtn from "../../components/common/backBtn";
+import LoopLoading from "../../components/common/loopLoading";
 
 const GET_BENEFITS = gql`
   query getById($id: Int!) {
@@ -138,43 +139,49 @@ const DetailPage = () => {
   });
   return (
     <>
-      <BackBtn />
-      <Header button={true}>
-        <Title button={true}>
-          {data?.getById?.summary[0]} <br />
-          <Highlight>{data?.getById?.summary[1]} </Highlight>
-          {data?.getById?.summary[2]}
-        </Title>
-      </Header>
-      <Address>{data?.getById?.address}</Address>
-      <CarouserContainerInner>
-        {data?.getById?.dtlImgs.map((imgs, index) => (
-          <Images key={index} src={imgs} />
-        ))}
-      </CarouserContainerInner>
-      <DetailContainer>
-        <Label>혜택</Label>
-        <DetailWrapper>
-          {data?.getById?.benefits.map((benefit, index) => (
-            <Detail key={index}>{benefit}</Detail>
-          ))}
-        </DetailWrapper>
-      </DetailContainer>
-      <DetailContainer>
-        <Label>조건</Label>
-        <DetailWrapper>
-          {data?.getById?.conditions.map((condition, index) => (
-            <Detail key={index}>{condition}</Detail>
-          ))}
-        </DetailWrapper>
-      </DetailContainer>
-      <DetailContainer>
-        <Label>기타</Label>
-        <DetailWrapper>
-          <Detail>임직원 할인과 중복 불가</Detail>
-        </DetailWrapper>
-      </DetailContainer>
-      <CTA>더 알아보기</CTA>
+      {loading ? (
+        <LoopLoading />
+      ) : (
+        <>
+          <BackBtn />
+          <Header button={true}>
+            <Title button={true}>
+              {data?.getById?.summary[0]} <br />
+              <Highlight>{data?.getById?.summary[1]} </Highlight>
+              {data?.getById?.summary[2]}
+            </Title>
+          </Header>
+          <Address>{data?.getById?.address}</Address>
+          <CarouserContainerInner>
+            {data?.getById?.dtlImgs.map((imgs, index) => (
+              <Images key={index} src={imgs} />
+            ))}
+          </CarouserContainerInner>
+          <DetailContainer>
+            <Label>혜택</Label>
+            <DetailWrapper>
+              {data?.getById?.benefits.map((benefit, index) => (
+                <Detail key={index}>{benefit}</Detail>
+              ))}
+            </DetailWrapper>
+          </DetailContainer>
+          <DetailContainer>
+            <Label>조건</Label>
+            <DetailWrapper>
+              {data?.getById?.conditions.map((condition, index) => (
+                <Detail key={index}>{condition}</Detail>
+              ))}
+            </DetailWrapper>
+          </DetailContainer>
+          <DetailContainer>
+            <Label>기타</Label>
+            <DetailWrapper>
+              <Detail>임직원 할인과 중복 불가</Detail>
+            </DetailWrapper>
+          </DetailContainer>
+          <CTA>더 알아보기</CTA>
+        </>
+      )}
     </>
   );
 };
