@@ -73,47 +73,51 @@ const TabIndicator = () => {
             <Link href="/benefit">전체</Link>
           </Item>
         )}
-        {loading
-          ? "로딩중"
-          : uniqueArr.map((data, index) =>
-              activeTabs === `/benefit/category/${data}` ? (
-                <Item
-                  key={index}
-                  color="var(--main-color)"
-                  borderColor="var(--main-color)"
-                >
-                  <Link href={`/benefit/category/${data}`}>
-                    {data === "culture"
-                      ? "문화"
-                      : data === "food"
-                      ? "식당"
-                      : data === "activity"
-                      ? "여행&액티비티"
-                      : data === "education"
-                      ? "교육"
-                      : ""}
-                  </Link>
-                </Item>
-              ) : (
-                <Item
-                  key={index}
-                  color="var(--color)"
-                  borderColor="var(--bg-color)"
-                >
-                  <Link href={`/benefit/category/${data}`}>
-                    {data === "culture"
-                      ? "문화"
-                      : data === "food"
-                      ? "식당"
-                      : data === "activity"
-                      ? "여행&액티비티"
-                      : data === "education"
-                      ? "교육"
-                      : ""}
-                  </Link>
-                </Item>
-              )
-            )}
+        {loading ? (
+          <Item color="var(--color)" borderColor="var(--bg-color)">
+            불러오고 있어요...
+          </Item>
+        ) : (
+          uniqueArr.map((data, index) =>
+            activeTabs === `/benefit/category/${data}` ? (
+              <Item
+                key={index}
+                color="var(--main-color)"
+                borderColor="var(--main-color)"
+              >
+                <Link href={`/benefit/category/${data}`}>
+                  {data === "culture"
+                    ? "문화"
+                    : data === "food"
+                    ? "식당"
+                    : data === "activity"
+                    ? "여행&액티비티"
+                    : data === "education"
+                    ? "교육"
+                    : ""}
+                </Link>
+              </Item>
+            ) : (
+              <Item
+                key={index}
+                color="var(--color)"
+                borderColor="var(--bg-color)"
+              >
+                <Link href={`/benefit/category/${data}`}>
+                  {data === "culture"
+                    ? "문화"
+                    : data === "food"
+                    ? "식당"
+                    : data === "activity"
+                    ? "여행&액티비티"
+                    : data === "education"
+                    ? "교육"
+                    : ""}
+                </Link>
+              </Item>
+            )
+          )
+        )}
       </TabWrapper>
     </TabContainer>
   );
