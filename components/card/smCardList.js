@@ -2,7 +2,12 @@ import styled from "styled-components";
 import Alert from "../common/alert";
 import SmCard from "./smCard";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+`;
 
 const SmCardList = ({ Data }) => {
   return (

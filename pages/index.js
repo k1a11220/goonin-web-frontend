@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SmCard from "../components/card/smCard";
 import BottomTabNav from "../components/navigation/BottomTabNav";
 import { Header, Title } from "../styles/styles";
 import TextLogo from "../styles/TextLogo";
@@ -43,10 +44,18 @@ const HeadCard = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  height: 364px;
   background-color: var(--card-color);
   border-radius: 20px;
   margin-bottom: 60px;
+
+  & > h2 {
+    padding-left: 26px;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--main-color);
+  }
 `;
 
 const Home = () => {
@@ -65,7 +74,27 @@ const Home = () => {
         <HeadCard />
         <HeadCard />
       </HeadSilder>
-      <ContentContainer />
+      <ContentContainer>
+        <h2>추천 혜택</h2>
+        <SmCard
+          id="1"
+          title="가평플라워아일랜드"
+          subtitles="숙박 2만원 할인"
+          thumbnail=""
+        />
+        <SmCard
+          id="1"
+          title="쿠로이 저택엔 누가 살고 있을까?"
+          subtitles="S,B,A석 20% 할인"
+          thumbnail=""
+        />
+        <SmCard
+          id="1"
+          title="CGV"
+          subtitles="2D영화 4,000원 할인"
+          thumbnail=""
+        />
+      </ContentContainer>
       <BottomTabNav />
     </>
   );
