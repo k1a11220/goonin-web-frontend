@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Alert from "../common/alert";
 import SmCard from "./smCard";
 
 const Container = styled.div``;
@@ -6,7 +7,13 @@ const Container = styled.div``;
 const SmCardList = ({ Data }) => {
   return (
     <Container>
-      {Data &&
+      {Data.length === 0 ? (
+        <Alert
+          message_1={"조건에 맞는 혜택이 없어요 "}
+          message_2={"다음엔 더 많은 혜택으로 돌아올게요"}
+        />
+      ) : (
+        Data &&
         Data.map((card) => (
           <SmCard
             key={card.id}
@@ -15,7 +22,8 @@ const SmCardList = ({ Data }) => {
             subtitles={card.mainBenefit}
             thumbnail={card.thumbnail}
           />
-        ))}
+        ))
+      )}
     </Container>
   );
 };
