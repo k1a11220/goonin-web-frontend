@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
 
     html, body, #__next {
     min-height: 100%;
+    background-color: var(--bg-color);
   }
 `;
 

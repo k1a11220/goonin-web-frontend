@@ -2,10 +2,13 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import styled from "styled-components";
 import BottomTabNav from "../components/navigation/BottomTabNav";
-import { Container, Header, Title } from "../styles/styles";
+import { Header, Title } from "../styles/styles";
+import TextLogo from "../styles/TextLogo";
+import Benefit from "./benefit";
 
 const HeadSilder = styled.div`
   width: 100vw;
+  max-width: var(--width);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -32,9 +35,9 @@ const HeadCard = styled.div`
 
 const ContentContainer = styled.div`
   height: 364px;
-  background-color: #f8f8f8;
+  background-color: var(--card-color);
   border-radius: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 100px;
 `;
 
 const Home = () => {
@@ -43,7 +46,9 @@ const Home = () => {
   return (
     <>
       <Header button={false}>
-        <Title paddingTop="94px">군복무 가이드</Title>
+        <Title paddingTop="94px">
+          <TextLogo />
+        </Title>
       </Header>
       {/* <HeadSilder>
         <HeadCard />
@@ -52,7 +57,7 @@ const Home = () => {
         <HeadCard />
       </HeadSilder> */}
       <ContentContainer />
-      <ContentContainer />
+
       <BottomTabNav />
     </>
   );

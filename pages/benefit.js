@@ -21,13 +21,13 @@ const GET_BENEFIT = gql`
   }
 `;
 
-const Benefit = () => {
+const Benefit = ({ inside }) => {
   const { loading, data } = useQuery(GET_BENEFIT);
   return (
     <BenefitLayout header="혜택">
       <Gap />
       {loading ? <SmCardLoading /> : <SmCardList Data={data.benefits} />}
-      <BottomTabNav />
+      {inside ? null : <BottomTabNav />}
     </BenefitLayout>
   );
 };
