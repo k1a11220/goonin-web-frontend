@@ -24,6 +24,13 @@ const TabContainer = styled.div`
   overflow-x: scroll;
   max-width: var(--width);
   z-index: 1;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &:-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const TabWrapper = styled.div`
