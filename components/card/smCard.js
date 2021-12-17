@@ -35,6 +35,10 @@ const Title = styled.h2`
   font-size: 14px;
   color: var(--text-color);
   margin-bottom: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 18px;
 `;
 
 const Subtitles = styled.p`
