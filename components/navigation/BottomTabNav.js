@@ -17,6 +17,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: auto;
 `;
 
 const NavItem = styled(Link)`
@@ -32,7 +33,7 @@ const Icon = styled.div`
   align-items: center;
   flex-direction: column;
   cursor: pointer;
-  margin: 22px;
+  margin: 0 22px;
   width: 84px;
 
   & p {

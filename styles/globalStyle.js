@@ -26,7 +26,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html, body, #__next {
-    min-height: 100%;
+    min-height: 100vh;
+    position: relative;
     background-color: var(--bg-color);
   }
 `;

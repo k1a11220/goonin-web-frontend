@@ -1,31 +1,40 @@
-import { useQuery } from "@apollo/client";
-import gql from "graphql-tag";
 import styled from "styled-components";
 import BottomTabNav from "../components/navigation/BottomTabNav";
 import { Header, Title } from "../styles/styles";
 import TextLogo from "../styles/TextLogo";
-import Benefit from "./benefit";
 
 const HeadSilder = styled.div`
   width: 100vw;
-  max-width: var(--width);
-  margin: 0 auto;
+  height: calc(166px + 44px);
+  max-width: calc(var(--width));
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-self: center;
   gap: 16px;
-  height: 146px;
-  overflow-x: scroll;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &:-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const HeadCard = styled.div`
-  width: 334px;
-  height: 118px;
-  background-color: #f3f4f1;
+  width: calc(100vw - 24px * 2 - 24px);
+  max-width: calc(var(--width) - 24px * 2 - 24px);
+  height: 166px;
+  background-color: #77c0ff;
   border-radius: 20px;
 
-  &:first-child {
-    margin-left: 24px;
+  scroll-snap-align: center;
+
+  @media (max-width: 600px) {
+    &:first-child {
+      margin-left: 24px;
+    }
   }
 
   &:last-of-type {
@@ -37,7 +46,7 @@ const ContentContainer = styled.div`
   height: 364px;
   background-color: var(--card-color);
   border-radius: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 `;
 
 const Home = () => {
@@ -50,14 +59,13 @@ const Home = () => {
           <TextLogo />
         </Title>
       </Header>
-      {/* <HeadSilder>
+      <HeadSilder>
         <HeadCard />
         <HeadCard />
         <HeadCard />
         <HeadCard />
-      </HeadSilder> */}
+      </HeadSilder>
       <ContentContainer />
-
       <BottomTabNav />
     </>
   );
