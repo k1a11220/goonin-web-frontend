@@ -1,14 +1,10 @@
 import { useQuery } from "@apollo/client";
-import styled from "styled-components";
 import gql from "graphql-tag";
 import SmCardList from "../components/card/smCardList";
 import SmCardLoading from "../components/common/smCardLoading";
 import BottomTabNav from "../components/navigation/BottomTabNav";
 import BenefitLayout from "../layout/benefitLayout";
-
-const Gap = styled.div`
-  height: 26px;
-`;
+import { Gap } from "../styles/styles";
 
 const GET_BENEFIT = gql`
   {

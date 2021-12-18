@@ -23,3 +23,11 @@ export const Title = styled.h1`
   align-self: center;
   line-height: 1.4;
 `;
+
+export const Highlight = styled.span`
+  color: var(--highlight-color);
+`;
+
+export const Gap = styled.div`
+  height: 26px;
+`;
