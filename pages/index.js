@@ -6,7 +6,7 @@ import TextLogo from "../styles/TextLogo";
 
 const HeadSilder = styled.div`
   width: 100vw;
-  height: calc(166px + 44px);
+  aspect-ratio: 16 / 9;
   max-width: calc(var(--width));
   display: flex;
   flex-direction: column;
@@ -26,20 +26,19 @@ const HeadSilder = styled.div`
 const HeadCard = styled.div`
   width: calc(100vw - 24px * 2 - 24px);
   max-width: calc(var(--width) - 24px * 2 - 24px);
-  height: 166px;
+  /* height: 166px; */
   background-color: #77c0ff;
   border-radius: 20px;
-
+  aspect-ratio: 16 / 9;
   scroll-snap-align: center;
 
   @media (max-width: 600px) {
     &:first-child {
       margin-left: 24px;
     }
-  }
-
-  &:last-of-type {
-    margin-right: 24px;
+    &:last-of-type {
+      margin-right: 24px;
+    }
   }
 `;
 
