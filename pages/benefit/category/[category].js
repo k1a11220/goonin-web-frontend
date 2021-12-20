@@ -33,7 +33,7 @@ const CategoryPage = () => {
       {loading ? (
         <SmCardLoading />
       ) : (
-        <SmCardList Data={data.getByCategoryLocation} />
+        <SmCardList data={data.getByCategoryLocation} isInside={false} />
       )}
       <BottomTabNav />
     </BenefitLayout>

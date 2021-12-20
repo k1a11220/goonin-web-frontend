@@ -9,17 +9,17 @@ const Container = styled.div`
   margin-bottom: 16px;
 `;
 
-const SmCardList = ({ Data }) => {
+const getList = (data) => {
   return (
-    <Container>
-      {Data.length === 0 ? (
+    <>
+      {data.length === 0 ? (
         <Alert
           message_1={"조건에 맞는 혜택이 없어요 "}
           message_2={"다음엔 더 많은 혜택으로 돌아올게요"}
         />
       ) : (
-        Data &&
-        Data.map((card) => (
+        data &&
+        data.map((card) => (
           <SmCard
             key={card.id}
             id={card.id}
@@ -29,7 +29,15 @@ const SmCardList = ({ Data }) => {
           />
         ))
       )}
-    </Container>
+    </>
+  );
+};
+
+const SmCardList = ({ data, isInside }) => {
+  return (
+    <>
+      {isInside ? <>{getList(data)}</> : <Container>{getList(data)}</Container>}
+    </>
   );
 };
 

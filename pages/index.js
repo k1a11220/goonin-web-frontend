@@ -22,7 +22,14 @@ const Home = () => {
           },
         ]}
       />
-      <SmCardGroup title={"추천혜택"} list={[1, 2, 3]} />
+      <SmCardGroup
+        title="추천혜택"
+        data={[
+          { id: 0, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
+          { id: 0, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
+          { id: 0, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
+        ]}
+      />
       <BottomTabNav />
     </>
   );

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import SmCard from "../card/smCard";
+import SmCardList from "../card/smCardList";
 
 const ContentContainer = styled.div`
   background-color: var(--card-color);
@@ -16,19 +17,11 @@ const ContentContainer = styled.div`
   }
 `;
 
-const SmCardGroup = ({ title, list }) => {
+const SmCardGroup = ({ title, data }) => {
   return (
     <ContentContainer>
       <h2>{title}</h2>
-      {list.map((list, index) => (
-        <SmCard
-          key={index}
-          id="1"
-          title="가평플라워아일랜드"
-          subtitles="숙박 2만원 할인"
-          thumbnail=""
-        />
-      ))}
+      <SmCardList data={data} isInside={true} />
     </ContentContainer>
   );
 };
