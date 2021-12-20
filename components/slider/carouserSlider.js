@@ -1,17 +1,23 @@
 import styled from "styled-components";
 
+const ThumbnailUrl =
+  "data:image/gif;base64,R0lGODlhAQABAPcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAABAAEAAAgEAP8FBAA7";
+
 const CarouserContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 12px;
+  gap: ${(props) => (props.isInside ? "12px" : "var(--component-gap)")};
   overflow: auto;
   scroll-snap-type: x mandatory;
-  aspect-ratio: 16 / 9;
   width: 100vw;
+  height: ${(props) => (props.isInside ? "337.5px" : "297px")};
   align-self: center;
   margin-bottom: 40px;
-  max-width: calc(var(--width) + 24px * 2);
+  max-width: ${(props) =>
+    props.isInside
+      ? "calc(var(--width) + var(--padding) * 2)"
+      : "var(--width)"};
 
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -19,31 +25,57 @@ const CarouserContainer = styled.div`
   &:-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 600px) {
+    height: ${(props) => (props.isInside ? "55vw" : "50vw")};
+  }
 `;
 
-const Images = styled.img`
-  width: calc(100vw - 24px * 2);
-  max-width: calc(var(--width));
+const Slide = styled.img`
+  width: ${(props) =>
+    props.isInside
+      ? "calc(100vw - var(--padding) * 2)"
+      : "calc(100vw - var(--padding) * 3)"};
+  max-width: ${(props) =>
+    props.isInside
+      ? "var(--width)"
+      : "calc(var(--width) - var(--padding) * 3)"};
   background-color: var(--card-color);
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   scroll-snap-align: center;
-  aspect-ratio: 16 / 9;
+  height: ${(props) => (props.isInside ? "337.5px" : "297px")};
   object-fit: cover;
 
   &:first-child {
-    margin-left: 24px;
+    margin-left: ${(props) => (props.isInside ? "var(--padding)" : "0")};
   }
 
   &:last-of-type {
-    margin-right: 24px;
+    margin-right: ${(props) => (props.isInside ? "var(--padding)" : "0")};
+  }
+
+  @media (max-width: 600px) {
+    height: ${(props) => (props.isInside ? "55vw" : "50vw")};
+
+    &:first-child {
+      margin-left: var(--padding);
+    }
+
+    &:last-of-type {
+      margin-right: var(--padding);
+    }
   }
 `;
 
-const CarouserSlider = ({ data }) => {
+const CarouserSlider = ({ data, isInside }) => {
   return (
-    <CarouserContainer>
+    <CarouserContainer isInside={isInside}>
       {data?.map((imgs, index) => (
-        <Images key={index} src={imgs} />
+        <Slide
+          key={index}
+          src={imgs ? imgs : ThumbnailUrl}
+          isInside={isInside}
+        />
       ))}
     </CarouserContainer>
   );

@@ -27,7 +27,7 @@ const Item = styled.div`
   color: ${(props) => props.color};
   font-size: 14px;
   padding: 10px 15px 8px 15px;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   background-color: ${(props) => props.bgColor};
   cursor: pointer;
 `;

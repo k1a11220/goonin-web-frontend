@@ -38,6 +38,7 @@ const DetailPage = () => {
   const { loading, data } = useQuery(GET_BENEFITS, {
     variables: { id: +id },
   });
+  console.log(data?.getById?.dtlImgs);
   return (
     <>
       {loading ? (
@@ -53,7 +54,7 @@ const DetailPage = () => {
             </Title>
           </Header>
           <SmallBtn label={data?.getById?.address} />
-          <CarouserSlider data={data?.getById?.dtlImgs} />
+          <CarouserSlider data={data?.getById?.dtlImgs} isInside={true} />
           <BenefitDetailInfo label={"혜택"} data={data?.getById?.benefits} />
           <BenefitDetailInfo label={"조건"} data={data?.getById?.conditions} />
           <BenefitDetailInfo label={"기타"} data={data?.getById?.othersOpts} />

@@ -5,6 +5,11 @@ const GlobalStyle = createGlobalStyle`
         font-size: 100%;
         --font-medium: 400;
         --width: 600px;
+        --component-gap: 16px;
+        --border-radius: 20px;
+        --border-radius-sm: 10px;
+        --border-radius-md: 18px;
+        --padding: 24px;
 
         @media (max-width: 800px) {
             

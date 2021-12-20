@@ -5,8 +5,8 @@ import SmCard from "./smCard";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: var(--component-gap);
+  margin-bottom: var(--component-gap);
 `;
 
 const getList = (data) => {

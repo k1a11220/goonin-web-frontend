@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  display: flex;
   width: 200px;
   height: 300px;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

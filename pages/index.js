@@ -1,6 +1,6 @@
-import HeadSlider from "../components/slider/headSlider";
-import SmCardGroup from "../components/common/smCardGroup";
+import SmCardGroup from "../components/card/smCardGroup";
 import BottomTabNav from "../components/navigation/BottomTabNav";
+import CarouserSlider from "../components/slider/carouserSlider";
 import { Header, Title } from "../styles/styles";
 import TextLogo from "../styles/TextLogo";
 
@@ -12,22 +12,13 @@ const Home = () => {
           <TextLogo />
         </Title>
       </Header>
-      <HeadSlider
-        data={[
-          {
-            url: "1234",
-          },
-          {
-            url: "1234",
-          },
-        ]}
-      />
+      <CarouserSlider data={["", ""]} isInside={false} />
       <SmCardGroup
         title="추천혜택"
         data={[
           { id: 0, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
-          { id: 0, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
-          { id: 0, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
+          { id: 1, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
+          { id: 2, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
         ]}
       />
       <BottomTabNav />

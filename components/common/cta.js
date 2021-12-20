@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ButtonContainer = styled.a`
   width: calc(100vw - 24px * 2);
   height: 60px;
-  border-radius: 18px;
+  border-radius: var(--border-radius-md);
   background-color: var(--main-color);
   border: none;
   color: var(--bg-color);

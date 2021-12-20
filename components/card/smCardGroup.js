@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import SmCard from "../card/smCard";
-import SmCardList from "../card/smCardList";
+import SmCardList from "./smCardList";
 
 const ContentContainer = styled.div`
   background-color: var(--card-color);
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   margin-bottom: 60px;
 
   & > h2 {
