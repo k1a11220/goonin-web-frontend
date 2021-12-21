@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import useDocumentScrollThrottled from "../../hooks/useDocumentScrollThrottled";
+import { Flex } from "../../styles/styles";
 
 const TabContainer = styled.div`
   position: ${(props) => props.scroll};
@@ -16,8 +17,7 @@ const TabContainer = styled.div`
   max-width: var(--width);
 `;
 
-const TabWrapper = styled.div`
-  display: flex;
+const TabWrapper = styled(Flex)`
   width: calc(100vw - 24px * 2);
   margin: 0 auto;
   max-width: var(--width);

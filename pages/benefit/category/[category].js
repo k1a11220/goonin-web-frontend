@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import SmCardList from "../../../components/card/smCardList";
-import FilterIndicator from "../../../components/common/filterIndicator";
+import FilterIndicator from "../../../components/benefit/filterIndicator";
 import SmCardLoading from "../../../components/common/smCardLoading";
 import BottomTabNav from "../../../components/navigation/BottomTabNav";
 import BenefitLayout from "../../../layout/benefitLayout";

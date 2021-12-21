@@ -38,7 +38,6 @@ const DetailPage = () => {
   const { loading, data } = useQuery(GET_BENEFITS, {
     variables: { id: +id },
   });
-  console.log(data?.getById?.dtlImgs);
   return (
     <>
       {loading ? (

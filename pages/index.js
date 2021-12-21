@@ -12,7 +12,13 @@ const Home = () => {
           <TextLogo />
         </Title>
       </Header>
-      <CarouserSlider data={["", ""]} isInside={false} />
+      <CarouserSlider
+        data={[
+          "https://i.imgur.com/8aMyoMf.png",
+          "https://i.imgur.com/TqjJbuf.png",
+        ]}
+        isInside={false}
+      />
       <SmCardGroup
         title="추천혜택"
         data={[

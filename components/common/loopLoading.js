@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { Flex } from "../../styles/styles";
 
-const Container = styled.div`
+const Container = styled(Flex)`
   position: fixed;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

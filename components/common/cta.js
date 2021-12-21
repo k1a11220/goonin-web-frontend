@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ButtonContainer = styled.a`
+  display: flex;
   width: calc(100vw - 24px * 2);
   height: 60px;
   border-radius: var(--border-radius-md);
@@ -11,7 +12,6 @@ const ButtonContainer = styled.a`
   position: fixed;
   bottom: 24px;
   max-width: var(--width);
-  display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;

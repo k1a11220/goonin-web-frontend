@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { Flex } from "../../styles/styles";
 
-const Container = styled.div`
-  display: flex;
+const Container = styled(Flex)`
   width: 200px;
   height: 300px;
   flex-direction: column;

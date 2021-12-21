@@ -1,19 +1,20 @@
 import styled from "styled-components";
+import { Flex } from "../../styles/styles";
 
 const ThumbnailUrl =
   "data:image/gif;base64,R0lGODlhAQABAPcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAABAAEAAAgEAP8FBAA7";
 
-const CarouserContainer = styled.div`
-  display: flex;
+const CarouserContainer = styled(Flex)`
   flex-wrap: wrap;
   flex-direction: column;
   gap: ${(props) => (props.isInside ? "12px" : "var(--component-gap)")};
   overflow: auto;
   scroll-snap-type: x mandatory;
   width: 100vw;
-  height: ${(props) => (props.isInside ? "337.5px" : "297px")};
+  height: ${(props) => (props.isInside ? "337.5px" : "186px")};
   align-self: center;
-  margin-bottom: 40px;
+  margin-bottom: ${(props) =>
+    props.isInside ? "40px" : "calc(var(--component-gap) * 2)"};
   max-width: ${(props) =>
     props.isInside
       ? "calc(var(--width) + var(--padding) * 2)"
@@ -27,7 +28,7 @@ const CarouserContainer = styled.div`
   }
 
   @media (max-width: 600px) {
-    height: ${(props) => (props.isInside ? "55vw" : "50vw")};
+    height: ${(props) => (props.isInside ? "55vw" : "118px")};
   }
 `;
 
@@ -43,7 +44,7 @@ const Slide = styled.img`
   background-color: var(--card-color);
   border-radius: var(--border-radius);
   scroll-snap-align: center;
-  height: ${(props) => (props.isInside ? "337.5px" : "297px")};
+  height: ${(props) => (props.isInside ? "337.5px" : "186px")};
   object-fit: cover;
 
   &:first-child {
@@ -55,7 +56,7 @@ const Slide = styled.img`
   }
 
   @media (max-width: 600px) {
-    height: ${(props) => (props.isInside ? "55vw" : "50vw")};
+    height: ${(props) => (props.isInside ? "55vw" : "118px")};
 
     &:first-child {
       margin-left: var(--padding);

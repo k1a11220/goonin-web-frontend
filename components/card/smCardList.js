@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import { Flex } from "../../styles/styles";
 import Alert from "../common/alert";
 import SmCard from "./smCard";
 
-const Container = styled.div`
-  display: flex;
+const Container = styled(Flex)`
   flex-direction: column;
   gap: var(--component-gap);
   margin-bottom: var(--component-gap);

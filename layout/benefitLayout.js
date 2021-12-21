@@ -1,6 +1,6 @@
 import React from "react";
 import { Header, Title } from "../styles/styles";
-import TabIndicator from "../components/common/tabIndicator";
+import TabIndicator from "../components/benefit/tabIndicator";
 
 const BenefitLayout = ({ children, header, location }) => {
   return (

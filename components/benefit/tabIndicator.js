@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
 import gql from "graphql-tag";
+import { Flex } from "../../styles/styles";
 
 const GET_BENEFIT = gql`
   {
@@ -33,8 +34,7 @@ const TabContainer = styled.div`
   }
 `;
 
-const TabWrapper = styled.div`
-  display: flex;
+const TabWrapper = styled(Flex)`
   width: calc(100vw - 24px * 2);
   padding-top: 24px;
   margin: 0 auto;

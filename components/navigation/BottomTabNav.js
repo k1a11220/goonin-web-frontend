@@ -5,8 +5,9 @@ import { useRouter } from "next/dist/client/router";
 import HomeIcon from "./icon/HomeIcon";
 import BenefitIcon from "./icon/benefitIcon";
 import MoreIcon from "./icon/moreIcon";
+import { Flex } from "../../styles/styles";
 
-const Container = styled.div`
+const Container = styled(Flex)`
   width: 100vw;
   align-self: center;
   height: 72px;
@@ -14,7 +15,6 @@ const Container = styled.div`
   bottom: 0;
   border-top: 2px solid #f2f3f5;
   background-color: var(--bg-color);
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: auto;
@@ -27,8 +27,7 @@ const NavItem = styled(Link)`
   cursor: pointer;
 `;
 
-const Icon = styled.div`
-  display: flex;
+const Icon = styled(Flex)`
   justify-content: center;
   align-items: center;
   flex-direction: column;

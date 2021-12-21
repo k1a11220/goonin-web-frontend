@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { Flex } from "../../styles/styles";
 
-const DetailContainer = styled.div`
-  display: flex;
+const DetailContainer = styled(Flex)`
   padding-bottom: 20px;
   margin-bottom: 22px;
   border-bottom: 1px solid #eff3f5;
