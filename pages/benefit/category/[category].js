@@ -19,13 +19,27 @@ const GET_FILTERED_BENEFITS = gql`
   }
 `;
 
+const GET_BENEFITS = gql`
+  query getByCategory($category: String!) {
+    getByCategory(category: $category) {
+      id
+      name
+      mainBenefit
+      thumbnail
+    }
+  }
+`;
+
 const CategoryPage = () => {
   const [location, setLocation] = useState("전국");
   const router = useRouter();
   const { category } = router.query;
-  const { loading, data } = useQuery(GET_FILTERED_BENEFITS, {
-    variables: { category: category, location: location },
-  });
+  const { loading, data } = useQuery(
+    location === "전국" ? GET_BENEFITS : GET_FILTERED_BENEFITS,
+    {
+      variables: { category: category, location: location },
+    }
+  );
 
   return (
     <BenefitLayout header="혜택">
@@ -33,7 +47,14 @@ const CategoryPage = () => {
       {loading ? (
         <SmCardLoading />
       ) : (
-        <SmCardList data={data.getByCategoryLocation} isInside={false} />
+        <SmCardList
+          data={
+            location === "전국"
+              ? data.getByCategory
+              : data.getByCategoryLocation
+          }
+          isInside={false}
+        />
       )}
       <BottomTabNav />
     </BenefitLayout>

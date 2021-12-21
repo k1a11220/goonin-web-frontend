@@ -7,7 +7,7 @@ const Container = styled(Flex)`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: ${(props) => (props.center ? "100%" : "0")};
   align-self: center;
   justify-self: center;
   background-color: var(--bg-color);
@@ -19,16 +19,16 @@ const Container = styled(Flex)`
   }
 `;
 
-const LoopLoading = () => {
+const LoopLoading = ({ message, center }) => {
   return (
-    <Container>
+    <Container center={center}>
       <div className="lds-ring">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
       </div>
-      <h2>혜택 정보를 가져오고 있어요</h2>
+      <h2>{message}</h2>
     </Container>
   );
 };

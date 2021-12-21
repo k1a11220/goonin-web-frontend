@@ -41,7 +41,7 @@ const DetailPage = () => {
   return (
     <>
       {loading ? (
-        <LoopLoading />
+        <LoopLoading message={"혜택 정보를 가져오고 있어요"} center={true} />
       ) : (
         <>
           <BackBtn />
