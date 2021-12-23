@@ -5,7 +5,7 @@ import { Flex } from "../../styles/styles";
 
 const TabContainer = styled.div`
   position: ${(props) => props.scroll};
-  top: calc(58px);
+  top: 58px;
   width: 100vw;
   align-self: center;
   padding-top: 14px;
@@ -18,7 +18,7 @@ const TabContainer = styled.div`
 `;
 
 const TabWrapper = styled(Flex)`
-  width: calc(100vw - 24px * 2);
+  width: calc(100vw - var(--component-gap) * 2 - 15px);
   margin: 0 auto;
   max-width: var(--width);
 `;
@@ -30,6 +30,12 @@ const Item = styled.div`
   border-radius: var(--border-radius);
   background-color: ${(props) => props.bgColor};
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:first-of-type {
+    padding: ${(props) =>
+      props.padding ? "10px 15px 8px 15px" : "10px 15px 8px 0"};
+  }
 `;
 
 const FilterIndicator = ({ location, setLocation }) => {
@@ -61,6 +67,7 @@ const FilterIndicator = ({ location, setLocation }) => {
           <Item
             color="var(--bg-color)"
             bgColor="var(--main-color)"
+            padding={true}
             onClick={() => setLocation("전국")}
           >
             전국

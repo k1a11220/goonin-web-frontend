@@ -11,7 +11,6 @@ const Container = styled(Flex)`
 `;
 
 const getList = (data) => {
-  console.log(data);
   return (
     <>
       {data === undefined ? (
