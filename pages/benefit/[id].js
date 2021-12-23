@@ -9,6 +9,7 @@ import CarouserSlider from "../../components/slider/carouserSlider";
 import CTA from "../../components/common/cta";
 import BenefitDetailInfo from "../../components/benefit/benefitDetailInfo";
 import SmallBtn from "../../components/common/smallBtn";
+import LocationIcon from "../../assets/locationIcon";
 
 const GET_BENEFITS = gql`
   query getById($id: Int!) {
@@ -52,7 +53,10 @@ const DetailPage = () => {
               {data?.getById?.summary[2]}
             </Title>
           </Header>
-          <SmallBtn label={data?.getById?.address} />
+          <SmallBtn
+            label={data?.getById?.address}
+            icon={<LocationIcon />}
+          ></SmallBtn>
           <CarouserSlider data={data?.getById?.dtlImgs} isInside={true} />
           <BenefitDetailInfo label={"혜택"} data={data?.getById?.benefits} />
           <BenefitDetailInfo label={"조건"} data={data?.getById?.conditions} />
