@@ -12,7 +12,7 @@ const BtnContainer = styled(Flex)`
   width: fit-content;
 
   & p {
-    margin-top: 2px;
+    line-height: 1.25;
     font-weight: 500;
     color: var(--main-color);
   }
