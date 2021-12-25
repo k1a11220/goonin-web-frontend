@@ -1,6 +1,8 @@
 import BottomTabNav from "../components/navigation/BottomTabNav";
-import { BorderLine, Header, Title } from "../styles/styles";
+import { BorderLine, Gap, Header, Title } from "../styles/styles";
 import styled from "styled-components";
+import TextBtn from "../components/more/textBtn";
+import RightArrow from "../assets/rightArrow";
 
 const Version = styled.span`
   padding-top: 94px;
@@ -23,7 +25,9 @@ const More = () => {
         <Title button={false}>더보기</Title>
         <Version>solift 21.12 Beta</Version>
       </Header>
-      <BorderLine width={"100vw"} />
+      {/* <BorderLine width={"100vw"} /> */}
+      <Gap />
+      <TextBtn lable={"화면 테마"} icon={<RightArrow />} />
       <BottomTabNav />
     </>
   );
