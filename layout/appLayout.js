@@ -8,10 +8,6 @@ import client from "../api/apollo";
 import { ApolloProvider } from "@apollo/client";
 import { Container } from "../styles/styles";
 
-const ThemeToggle = dynamic(() => import("../components/themeToggle"), {
-  ssr: false,
-});
-
 const AppLayout = ({ children }) => {
   const [theme, setTheme] = useState(null);
   return (
@@ -19,7 +15,6 @@ const AppLayout = ({ children }) => {
       <ThemeProvider theme={styledTheme}>
         <ThemeContext.Provider value={theme}>
           <GlobalStyle />
-          <ThemeToggle />
           <Container>{children}</Container>
         </ThemeContext.Provider>
       </ThemeProvider>

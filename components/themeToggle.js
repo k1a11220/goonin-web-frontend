@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-
-const ToggleContainer = styled.span``;
+import RadioBtn from "./more/radioBtn";
 
 const ThemeToggle = () => {
   const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme);
@@ -13,16 +11,18 @@ const ThemeToggle = () => {
     window.localStorage.setItem("theme", activeTheme);
   }, [activeTheme]);
   return (
-    <ToggleContainer activeTheme={activeTheme}>
-      {/* <button
-    //   aria-label={`Change to ${inactiveTheme} mode`}
-    //   title={`Change to ${inactiveTheme} mode`}
-    //   type="button"
-    //   onClick={() => setActiveTheme(inactiveTheme)}
-    // >
-    //   <span>Toggle</span>
-    // </button> */}
-    </ToggleContainer>
+    <>
+      <RadioBtn
+        lable={"밝은 테마"}
+        onClick={() => setActiveTheme("light")}
+        isChecked={activeTheme === "light" ? true : false}
+      />
+      <RadioBtn
+        lable={"어두운 테마"}
+        onClick={() => setActiveTheme("dark")}
+        isChecked={activeTheme === "dark" ? true : false}
+      />
+    </>
   );
 };
 

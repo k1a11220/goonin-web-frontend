@@ -21,10 +21,12 @@ const BtnWrapper = styled(Flex)`
   color: var(--text-color);
 
   & p {
+    margin-top: 2px;
     line-height: 1.25;
   }
 
-  & svg {
+  & span {
+    margin-top: 2px;
   }
 `;
 
