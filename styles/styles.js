@@ -35,3 +35,10 @@ export const Highlight = styled.span`
 export const Gap = styled.div`
   height: 26px;
 `;
+
+export const BorderLine = styled.div`
+  align-self: center;
+  width: ${(props) => props.width};
+  height: 1px;
+  background-color: var(--sub-color);
+`;

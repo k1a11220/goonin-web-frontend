@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
-import HomeIcon from "./icon/HomeIcon.js";
-import BenefitIcon from "./icon/benefitIcon.js";
-import MoreIcon from "./icon/moreIcon.js";
+import HomeIcon from "./icon/HomeIcon";
+import BenefitIcon from "./icon/benefitIcon";
+import MoreIcon from "./icon/moreIcon";
 import { Flex } from "../../styles/styles";
 
 const Container = styled(Flex)`
