@@ -3,7 +3,6 @@ import RadioBtn from "./more/radioBtn";
 
 const ThemeToggle = () => {
   const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme);
-  const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
   useEffect(() => {
     document.body.dataset.theme = activeTheme;

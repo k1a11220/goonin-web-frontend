@@ -12,10 +12,6 @@ const Version = styled.span`
   font-size: 14px;
 `;
 
-const ThemeToggle = dynamic(() => import("../components/themeToggle"), {
-  ssr: false,
-});
-
 const More = () => {
   return (
     <>
@@ -33,8 +29,7 @@ const More = () => {
       </Header>
       {/* <BorderLine width={"100vw"} /> */}
       <Gap />
-      <TextBtn lable={"화면 테마"} icon={<RightArrow />} />
-      <ThemeToggle />
+      <TextBtn lable={"화면 설정"} icon={<RightArrow />} link={"more/screen"} />
       <BottomTabNav />
     </>
   );

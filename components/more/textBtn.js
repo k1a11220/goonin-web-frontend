@@ -12,15 +12,15 @@ const BtnContainer = styled.a`
 `;
 
 const BtnWrapper = styled(Flex)`
-  width: 100%;
+  width: calc(100vw - var(--padding) * 2);
+  max-width: var(--width);
   height: 100%;
   justify-content: space-between;
   align-items: center;
-  padding-left: var(--padding);
-  padding-right: var(--padding);
-  color: var(--text-color);
+  margin: 0 auto;
 
   & p {
+    color: var(--text-color);
     margin-top: 2px;
     line-height: 1.25;
   }

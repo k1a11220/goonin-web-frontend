@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body.dark{
-        --color: #1d1d1d
+        --color: #1d1d1d;
         --text-color: #717989;
         --main-color: #2A364E;
         --highlight-color: #4191FD;

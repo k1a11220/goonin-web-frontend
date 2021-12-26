@@ -39,6 +39,7 @@ export const Gap = styled.div`
 export const BorderLine = styled.div`
   align-self: center;
   width: ${(props) => props.width};
+  max-width: var(--width);
   height: 1px;
   background-color: var(--sub-color);
 `;

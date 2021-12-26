@@ -35,7 +35,7 @@ const TabContainer = styled.div`
 `;
 
 const TabWrapper = styled(Flex)`
-  width: calc(100vw - 24px * 2);
+  width: calc(100vw - var(--padding) * 2);
   padding-top: 24px;
   margin: 0 auto;
   max-width: var(--width);

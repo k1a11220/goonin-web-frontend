@@ -45,7 +45,7 @@ const DetailPage = () => {
         <LoopLoading message={"혜택 정보를 가져오고 있어요"} center={true} />
       ) : (
         <>
-          <BackBtn />
+          <BackBtn isOnly={false} />
           <Header button={true}>
             <Title button={true}>
               {data?.getById?.summary[0]} <br />
