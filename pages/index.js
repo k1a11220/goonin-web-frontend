@@ -1,10 +1,25 @@
+import { useQuery } from "@apollo/client";
+import gql from "graphql-tag";
 import SmCardGroup from "../components/card/smCardGroup";
 import BottomTabNav from "../components/navigation/BottomTabNav";
 import CarouserSlider from "../components/slider/carouserSlider";
 import { Header, Title } from "../styles/styles";
 import TextLogo from "../styles/TextLogo";
 
+const GET_BENEFIT = gql`
+  {
+    recommendedBenefit {
+      id
+      name
+      mainBenefit
+      thumbnail
+    }
+  }
+`;
+
 const Home = () => {
+  const { loading, data } = useQuery(GET_BENEFIT);
+  console.log(data);
   return (
     <>
       <Header button={false}>
@@ -19,14 +34,11 @@ const Home = () => {
         ]}
         isInside={false}
       />
-      <SmCardGroup
-        title="추천혜택"
-        data={[
-          { id: 0, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
-          { id: 1, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
-          { id: 2, name: "롯데시네마", mainBenefit: "2D영화 최대 5천원 할인" },
-        ]}
-      />
+      {loading ? (
+        ""
+      ) : (
+        <SmCardGroup title="추천혜택" data={data.recommendedBenefit} />
+      )}
       <BottomTabNav />
     </>
   );
