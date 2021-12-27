@@ -5,9 +5,9 @@ const ButtonContainer = styled.a`
   width: calc(100vw - 24px * 2);
   height: 60px;
   border-radius: var(--border-radius-md);
-  background-color: var(--main-color);
+  background-color: var(--btn-color);
   border: none;
-  color: var(--bg-color);
+  color: #ffffff;
   font-size: 15px;
   position: fixed;
   bottom: 24px;

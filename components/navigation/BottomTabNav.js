@@ -13,7 +13,7 @@ const Container = styled(Flex)`
   height: 72px;
   position: sticky;
   bottom: 0;
-  border-top: 2px solid #f2f3f5;
+  border-top: 2px solid var(--border-color);
   background-color: var(--bg-color);
   justify-content: center;
   align-items: center;
@@ -61,17 +61,17 @@ const BottomTabNav = () => {
         {activeTabs === "/" ? (
           <Icon
             onClick={() => setActiveTabs("/home")}
-            color="var(--main-color)"
+            color="var(--active-color)"
           >
-            <HomeIcon fillColor="var(--main-color)" />
+            <HomeIcon fillColor="var(--active-color)" />
             <p>홈</p>
           </Icon>
         ) : (
           <Icon
             onClick={() => setActiveTabs("/home")}
-            color="var(--text-color)"
+            color="var(--unactive-color)"
           >
-            <HomeIcon fillColor="var(--color)" />
+            <HomeIcon fillColor="var(--unactive-color)" />
             <p>홈</p>
           </Icon>
         )}
@@ -80,17 +80,17 @@ const BottomTabNav = () => {
         {activeTabs.includes("/benefit") ? (
           <Icon
             onClick={() => setActiveTabs("/benefit")}
-            color="var(--main-color)"
+            color="var(--active-color)"
           >
-            <BenefitIcon fillColor="var(--main-color)" />
+            <BenefitIcon fillColor="var(--active-color)" />
             <p>혜택</p>
           </Icon>
         ) : (
           <Icon
             onClick={() => setActiveTabs("/benefit")}
-            color="var(--text-color)"
+            color="var(--unactive-color)"
           >
-            <BenefitIcon fillColor="var(--color)" />
+            <BenefitIcon fillColor="var(--unactive-color)" />
             <p>혜택</p>
           </Icon>
         )}
@@ -99,17 +99,17 @@ const BottomTabNav = () => {
         {activeTabs === "/more" ? (
           <Icon
             onClick={() => setActiveTabs("/more")}
-            color="var(--main-color)"
+            color="var(--active-color)"
           >
-            <MoreIcon fillColor="var(--main-color)" />
+            <MoreIcon fillColor="var(--active-color)" />
             <p>더보기</p>
           </Icon>
         ) : (
           <Icon
             onClick={() => setActiveTabs("/more")}
-            color="var(--text-color)"
+            color="var(--unactive-color)"
           >
-            <MoreIcon fillColor="var(--color)" />
+            <MoreIcon fillColor="var(--unactive-color)" />
             <p>더보기</p>
           </Icon>
         )}

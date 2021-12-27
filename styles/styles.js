@@ -22,7 +22,7 @@ export const Header = styled.div`
 export const Title = styled.h1`
   padding-top: ${(props) => (props.button === true ? "36px" : "94px")};
   font-size: 26px;
-  color: var(--main-color);
+  color: var(--active-color);
   font-weight: 600;
   align-self: center;
   line-height: 1.4;

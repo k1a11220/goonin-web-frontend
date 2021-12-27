@@ -57,7 +57,9 @@ const FilterIndicator = ({ location, setLocation }) => {
     }, TIMEOUT_DELAY);
   });
 
-  const borderStyle = shouldShowShadow ? "1px solid #f2f3f5" : "none";
+  const borderStyle = shouldShowShadow
+    ? "1px solid var(--border-color)"
+    : "none";
   const hiddenStyle = shouldHideHeader ? "static" : "sticky";
 
   return (
@@ -65,8 +67,8 @@ const FilterIndicator = ({ location, setLocation }) => {
       <TabWrapper>
         {location === "전국" ? (
           <Item
-            color="var(--bg-color)"
-            bgColor="var(--main-color)"
+            color="var(--active-color)"
+            bgColor="var(--btn-color)"
             padding={true}
             onClick={() => setLocation("전국")}
           >
@@ -79,8 +81,8 @@ const FilterIndicator = ({ location, setLocation }) => {
         )}
         {location === "서울" ? (
           <Item
-            color="var(--bg-color)"
-            bgColor="var(--main-color)"
+            color="var(--active-color)"
+            bgColor="var(--btn-color)"
             onClick={() => setLocation("서울")}
           >
             서울
@@ -92,8 +94,8 @@ const FilterIndicator = ({ location, setLocation }) => {
         )}
         {location === "경기남부" ? (
           <Item
-            color="var(--bg-color)"
-            bgColor="var(--main-color)"
+            color="var(--active-color)"
+            bgColor="var(--btn-color)"
             onClick={() => setLocation("경기남부")}
           >
             경기남부

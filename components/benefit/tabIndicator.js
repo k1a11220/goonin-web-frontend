@@ -20,7 +20,7 @@ const TabContainer = styled.div`
   width: 100vw;
   align-self: center;
   /* margin-bottom: 26px; */
-  border-bottom: 1px solid #f2f3f5;
+  border-bottom: 1px solid var(--border-color);
   background-color: var(--bg-color);
   overflow-x: scroll;
   max-width: var(--width);
@@ -72,7 +72,7 @@ const TabIndicator = () => {
     <TabContainer>
       <TabWrapper>
         {activeTabs === "/benefit" ? (
-          <Item color="var(--main-color)" borderColor="var(--main-color)">
+          <Item color="var(--active-color)" borderColor="var(--active-color)">
             <Link href="/benefit">전체</Link>
           </Item>
         ) : (
@@ -89,8 +89,8 @@ const TabIndicator = () => {
             activeTabs === `/benefit/category/${data}` ? (
               <Item
                 key={index}
-                color="var(--main-color)"
-                borderColor="var(--main-color)"
+                color="var(--active-color)"
+                borderColor="var(--active-color)"
               >
                 <Link href={`/benefit/category/${data}`}>
                   {data === "culture"

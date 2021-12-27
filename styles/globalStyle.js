@@ -21,19 +21,27 @@ const GlobalStyle = createGlobalStyle`
         --text-color: #717989;
         --main-color: #2A364E;
         --highlight-color: #4191FD;
+        --btn-color: #2A364E;
         --sub-color: #E7E9EB;
         --bg-color: #ffffff;
         --card-color: #F8F8F8;
+        --border-color: #f2f3f5;
+        --unactive-color: #cccfd4;
+        --active-color: #2A364E;
     }
 
     body.dark{
-        --color: #1d1d1d;
-        --text-color: #717989;
-        --main-color: #2A364E;
+        --color: #9E9EA4;
+        --text-color: #9E9EA4;
+        --main-color: #E4E4E5;
         --highlight-color: #4191FD;
-        --sub-color: #E7E9EB;
-        --bg-color: #ffffff;
-        --card-color: #F8F8F8;
+        --btn-color: #2A364E;
+        --sub-color: #272727;
+        --bg-color: #1d1d1d;
+        --card-color: #292929;
+        --border-color: #2C2C2C;
+        --unactive-color: #9E9EA4;
+        --active-color: #ffffff;
     }
 
     html, body, #__next {
