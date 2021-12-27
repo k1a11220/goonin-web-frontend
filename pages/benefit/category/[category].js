@@ -5,7 +5,7 @@ import { useState } from "react";
 import SmCardList from "../../../components/card/smCardList";
 import FilterIndicator from "../../../components/benefit/filterIndicator";
 import SmCardLoading from "../../../components/common/smCardLoading";
-import BottomTabNav from "../../../components/navigation/BottomTabNav";
+import BottomTabNav from "../../../components/navigation/bottomTabNav";
 import BenefitLayout from "../../../layout/benefitLayout";
 
 const GET_FILTERED_BENEFITS = gql`

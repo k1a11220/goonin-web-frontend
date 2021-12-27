@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import SmCardList from "../components/card/smCardList";
 import SmCardLoading from "../components/common/smCardLoading";
-import BottomTabNav from "../components/navigation/BottomTabNav";
+import BottomTabNav from "../components/navigation/bottomTabNav";
 import BenefitLayout from "../layout/benefitLayout";
 import { Gap } from "../styles/styles";
 

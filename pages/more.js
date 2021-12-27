@@ -1,10 +1,8 @@
-import BottomTabNav from "../components/navigation/BottomTabNav";
+import BottomTabNav from "../components/navigation/bottomTabNav";
 import { BorderLine, Gap, Header, Title } from "../styles/styles";
 import styled from "styled-components";
 import TextBtn from "../components/more/textBtn";
 import RightArrow from "../assets/rightArrow";
-import RadioBtn from "../components/more/radioBtn";
-import dynamic from "next/dynamic";
 
 const Version = styled.span`
   padding-top: 94px;

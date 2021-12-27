@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import SmCardGroup from "../components/card/smCardGroup";
-import BottomTabNav from "../components/navigation/BottomTabNav";
+import BottomTabNav from "../components/navigation/bottomTabNav";
 import CarouserSlider from "../components/slider/carouserSlider";
 import { Header, Title } from "../styles/styles";
 import TextLogo from "../styles/TextLogo";
