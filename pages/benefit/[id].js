@@ -24,7 +24,7 @@ const GET_BENEFITS = gql`
       mainBenefit
       benefits
       conditions
-      othersOpts
+      otherOpts
       dtlImgs
       dtlLink
       contactNb
@@ -60,7 +60,7 @@ const DetailPage = () => {
           <CarouserSlider data={data?.getById?.dtlImgs} isInside={true} />
           <BenefitDetailInfo label={"혜택"} data={data?.getById?.benefits} />
           <BenefitDetailInfo label={"조건"} data={data?.getById?.conditions} />
-          <BenefitDetailInfo label={"기타"} data={data?.getById?.othersOpts} />
+          <BenefitDetailInfo label={"기타"} data={data?.getById?.otherOpts} />
           <CTA title={"더 알아보기"} link={data?.getById?.dtlLink} />
         </>
       )}

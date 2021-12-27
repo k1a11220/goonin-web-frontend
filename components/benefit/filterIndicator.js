@@ -67,7 +67,7 @@ const FilterIndicator = ({ location, setLocation }) => {
       <TabWrapper>
         {location === "전국" ? (
           <Item
-            color="var(--active-color)"
+            color="var(--white)"
             bgColor="var(--btn-color)"
             padding={true}
             onClick={() => setLocation("전국")}
@@ -81,7 +81,7 @@ const FilterIndicator = ({ location, setLocation }) => {
         )}
         {location === "서울" ? (
           <Item
-            color="var(--active-color)"
+            color="var(--white)"
             bgColor="var(--btn-color)"
             onClick={() => setLocation("서울")}
           >
@@ -94,7 +94,7 @@ const FilterIndicator = ({ location, setLocation }) => {
         )}
         {location === "경기남부" ? (
           <Item
-            color="var(--active-color)"
+            color="var(--white)"
             bgColor="var(--btn-color)"
             onClick={() => setLocation("경기남부")}
           >

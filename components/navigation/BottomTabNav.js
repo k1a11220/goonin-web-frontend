@@ -69,7 +69,7 @@ const BottomTabNav = () => {
         ) : (
           <Icon
             onClick={() => setActiveTabs("/home")}
-            color="var(--unactive-color)"
+            color="var(--text-color)"
           >
             <HomeIcon fillColor="var(--unactive-color)" />
             <p>홈</p>
@@ -88,7 +88,7 @@ const BottomTabNav = () => {
         ) : (
           <Icon
             onClick={() => setActiveTabs("/benefit")}
-            color="var(--unactive-color)"
+            color="var(--text-color)"
           >
             <BenefitIcon fillColor="var(--unactive-color)" />
             <p>혜택</p>
@@ -107,7 +107,7 @@ const BottomTabNav = () => {
         ) : (
           <Icon
             onClick={() => setActiveTabs("/more")}
-            color="var(--unactive-color)"
+            color="var(--text-color)"
           >
             <MoreIcon fillColor="var(--unactive-color)" />
             <p>더보기</p>

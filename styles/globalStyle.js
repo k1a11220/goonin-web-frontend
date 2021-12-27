@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
         --border-radius-sm: 10px;
         --border-radius-md: 18px;
         --padding: 24px;
+        --white: #ffffff;
 
         @media (max-width: 800px) {
             
