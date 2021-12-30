@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
-import HomeIcon from "./icon/HomeIcon";
+import HomeIcon from "./icon/homeIcon";
 import BenefitIcon from "./icon/benefitIcon";
 import MoreIcon from "./icon/moreIcon";
 import { Flex } from "../../styles/styles";

@@ -19,7 +19,6 @@ const GET_BENEFIT = gql`
 
 const Home = () => {
   const { loading, data } = useQuery(GET_BENEFIT);
-  console.log(data);
   return (
     <>
       <Header button={false}>
