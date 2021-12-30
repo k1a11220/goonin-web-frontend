@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import AlertIcon from "../../assets/alertIcon";
 import { Flex } from "../../styles/styles";
 
 const Container = styled(Flex)`
@@ -25,14 +26,15 @@ const Container = styled(Flex)`
 `;
 
 const Icon = styled.span`
+  transform: scale(1.3);
   font-size: 64px;
   margin-bottom: 20px;
 `;
 
-const Alert = ({ message_1, message_2 }) => {
+const Alert = ({ message_1, message_2, icon }) => {
   return (
     <Container>
-      <Icon>🧐</Icon>
+      <Icon>{icon}</Icon>
       <p>{message_1}</p>
       <p>{message_2}</p>
     </Container>
